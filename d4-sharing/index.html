@@ -1,158 +1,146 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-
-		<title>reveal.js – The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
-
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-
-		<!-- 自定义样式 -->
-		<link rel="stylesheet" href="lib/css/myself.css">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-
-		<!--[if lt IE 9]>
+<head>
+    <meta charset="utf-8">
+    <title>reveal.js – The HTML Presentation Framework</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="lib/css/myself.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
-
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>动画！动画！动画！</h1>
-					<h3>算法、算法、算法、</h3>
-					<p>
-						<small>Created by <a href="http://jason82.com">jasonChen</a></small>
-					</p>
-				</section>
-
-				<section>
-					<section>
-						<h2>我们常见的动画</h2>
-						<div id="animate_translate">
-							<span>位移动画</span>
-							<div></div>
-						</div>
-						<div id="animate_rotate">
-							<span>旋转动画</span>
-							<div></div>
-						</div>
-						<div id="animate_skew">
-							<span>斜切动画</span>
-							<div></div>
-						</div>
-						<div id="animate_scale">
-							<span>缩放动画</span>
-							<div></div>
-						</div>
-					</section>
-					<section>
-						<h2>其他的动画</h2>
-						<p><a target="_blank" href="http://100.84.85.21:5050/svg/coco/">线条动画</a></p>
-						<p><a target="_blank" href="http://codepen.io/sol0mka/full/ogOYJj/">线条动画</a></p>
-						<p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_skeleton_graphics">骨骼动画</a></p>
-						<p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle">粒子动画</a></p>
-						<p><a target="_blank" href="http://100.84.85.21:5050/lowpolygon">低多边形动画</a></p>
-					</section>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>移动端动画技术方案</h2>
-						<p>CSS3动画</p>
-						<p>SVG动画</p>
-						<p>canvas动画</p>
-						<p>webgl动画</p>
-					</section>
-					<section>
-						<h2>性能和优势</h2>
-						<table>
-						<thead>
-							<tr>
-								<th>方案</th>
-								<th>优势</th>
-								<th>缺点</th>
-								<th>性能</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>CSS3</td>
-								<td>简单、支持广</td>
-								<td>渲染量少</td>
-								<td>费劲</td>
-							</tr>
-							<tr>
-								<td>SVG</td>
-								<td>矢量、线条</td>
-								<td>兼容性</td>
-								<td>性能一般</td>
-							</tr>
-							<tr>
-								<td>canvas</td>
-								<td>点线面全能</td>
-								<td>以来GPU</td>
-								<td>性能较好</td>
-							</tr>
-							<tr>
-								<td>webgl</td>
-								<td>十项全能</td>
-								<td>重度依赖GPU</td>
-								<td>非常好 <del style="color: #f00;">UC</del></td>
-							</tr>
-						</tbody>
-					</table>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>相关算法</h2>
-						<p>数学、物理、信号、图像</p>
-					</section>
-					<section>
-						<h2>四元数</h2>
-						<pre>
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>动画！动画！动画！</h1>
+                <h3>算法、算法、算法、</h3>
+                <p>
+                    <small>Created by <a href="http://jason82.com">jasonChen</a></small>
+                </p>
+            </section>
+            <section>
+                <section>
+                    <h2>我们常见的动画</h2>
+                    <div id="animate_translate">
+                        <span>位移动画</span>
+                        <div></div>
+                    </div>
+                    <div id="animate_rotate">
+                        <span>旋转动画</span>
+                        <div></div>
+                    </div>
+                    <div id="animate_skew">
+                        <span>斜切动画</span>
+                        <div></div>
+                    </div>
+                    <div id="animate_scale">
+                        <span>缩放动画</span>
+                        <div></div>
+                    </div>
+                </section>
+                <section>
+                    <h2>其他的动画</h2>
+                    <p><a target="_blank" href="http://100.84.85.21:5050/svg/coco/">线条动画</a></p>
+                    <p><a target="_blank" href="http://codepen.io/sol0mka/full/ogOYJj/">线条动画</a></p>
+                    <p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_skeleton_graphics">骨骼动画</a></p>
+                    <p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle">粒子动画</a></p>
+                    <p><a target="_blank" href="http://100.84.85.21:5050/lowpolygon">低多边形动画</a></p>
+                </section>
+            </section>
+            <!-- Example of nested vertical slides -->
+            <section>
+                <section>
+                    <h2>移动端动画技术方案</h2>
+                    <p>CSS3动画</p>
+                    <p>SVG动画</p>
+                    <p>canvas动画</p>
+                    <p>webgl动画</p>
+                </section>
+                <section>
+                    <h2>性能和优势</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>方案</th>
+                                <th>优势</th>
+                                <th>缺点</th>
+                                <th>性能</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CSS3</td>
+                                <td>简单、支持广</td>
+                                <td>渲染量少</td>
+                                <td>费劲</td>
+                            </tr>
+                            <tr>
+                                <td>SVG</td>
+                                <td>矢量、线条</td>
+                                <td>兼容性</td>
+                                <td>性能一般</td>
+                            </tr>
+                            <tr>
+                                <td>canvas</td>
+                                <td>点线面全能</td>
+                                <td>以来GPU</td>
+                                <td>性能较好</td>
+                            </tr>
+                            <tr>
+                                <td>webgl</td>
+                                <td>十项全能</td>
+                                <td>重度依赖GPU</td>
+                                <td>非常好
+                                    <del style="color: #f00;">UC</del>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>相关算法</h2>
+                    <p>数学、物理、信号、图像</p>
+                </section>
+                <section>
+                    <h2>四元数</h2>
+                    <pre>
 						<code class="hljs" data-trim contenteditable>
 // 三维空间旋转的基础
 // 能够进行球面插值
 p = x*i+y*j+z*k+w
 						</code>
 						</pre>
-					</section>
-					<section>
-						<h2>欧拉角</h2>
-						<p>最常用的描述物体旋转的方法</p>
-					</section>
-					<section>
-						<h2>矩阵</h2>
-						<p>所有三维空间的缔造者</p><pre>
+                </section>
+                <section>
+                    <h2>欧拉角</h2>
+                    <p>最常用的描述物体旋转的方法</p>
+                </section>
+                <section>
+                    <h2>矩阵</h2>
+                    <p>所有三维空间的缔造者</p><pre>
 						<code class="hljs" data-trim contenteditable>
 | m00 m01 m02 m03 |   | x |
 | m10 m11 m12 m13 | * | y |
@@ -160,173 +148,180 @@ p = x*i+y*j+z*k+w
 | m30 m31 m32 m33 |   | w |
 						</code>
 						</pre>
-					</section>
-					<section>
-						<p>柏林噪声</p>
-						<p>高阶brezier实时算法（二维、三维）</p>
-						<p>boids仿生算法</p>
-						<p>三角函数</p>
-						<p>动量、冲量</p>
-						<p>物体运动的运动因素模拟</p>
-						<p>向量知识</p>
-						<p>光线追踪</p>
-						<p>巴拉巴拉...</p>
-					</section>
-				</section>
+                </section>
+                <section>
+                    <p>柏林噪声</p>
+                    <p>高阶brezier实时算法（二维、三维）</p>
+                    <p>boids仿生算法</p>
+                    <p>三角函数</p>
+                    <p>动量、冲量</p>
+                    <p>物体运动的运动因素模拟</p>
+                    <p>向量知识</p>
+                    <p>光线追踪</p>
+                    <p>巴拉巴拉...</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>我都懵逼了</h2>
+                    <p>
+                        what's the hell ~~
+                    </p>
+                    <p>
+                        <img width="320" height="240" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaaa.jpg" alt="Down arrow">
+                    </p>
+                </section>
+                <section>
+                    <h2>我认识的前端不是这样的 >_< </h2>
+                    <p>
+                        <img width="410" height="157" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaa.gif" alt="Down arrow">
+                    </p>
+                </section>
+                <section>
+                    <h2>但是！我们是做营销活动的</h2>
+                    <p>
+                        <img width="410" height="254" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/woman.jpg" alt="Down arrow">
+                    </p>
+                </section>
+            </section>
+            <section>
+                <h2>用一用这些算法</h2>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/butterfly/">欧拉角旋转、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/starsClouds/">高阶brezier、四元数、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/particle/">三角函数、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/svg/none/">物体运动</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/traingle/">物体运动</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/webgl/">高等数学</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/flyTraingle/">带光照</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/carGame/">完整一点的</a></p>
+            </section>
+            <section>
+                <section>
+                    <h2>这么多动画怎么下手</h2>
+                    <p>
+                        <span class="fragment" data-fragment-index="0">没做过、</span>
+                        <span class="fragment" data-fragment-index="1">性能怎么办、</span>
+                        <span class="fragment" data-fragment-index="2">纠结、</span>
+                    </p>
+                    <p class="fragment visible current-fragment" data-fragment-index="3">
+                        <span class="fragment" data-fragment-index="4">数学要好、</span>
+                        <span class="fragment" data-fragment-index="5">物理要好、</span>
+                    </p>
+                    <p class="fragment visible current-fragment" data-fragment-index="6">
+                        算法好像比业务算法要难
+                    </p>
+                </section>
+                <section>
+                    <h2>快来用我的库吧</h2>
+                    <p>
+                        轻量简单、不用了解底层API、做动画很顺手
+                    </p>
+                    <p>
+                        <a target="_blank" href="https://jasonchen1982.github.io/jcc2d/">jcc2d</a>
+                    </p>
+                    <p>
+                        <a target="_blank" href="https://jasonchen1982.github.io/jcw2d/">jcw2d</a>
+                    </p>
+                    <p>
+                        <a target="_blank" href="http://100.84.85.21:5050/">jcw3d</a>
+                    </p>
+                </section>
+            </section>
+            <section>
+                <h2>轻量级、适合移动端</h2>
+                <p>
+                    <img width="500" height="226" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/haha.gif" alt="Down arrow">
+                </p>
+            </section>
+            <section>
+                <section>
+                    <h2>移动端开发</h2>
+                    <p>我们遇到的阻碍</p>
+                </section>
+                <section>
+                    <h2>设备性能</h2>
+                    <p>移动设备计算能力很差</p>
+                    <p>浏览器总是无法兼容所有的GPU</p>
+                </section>
+                <section>
+                    <h2>阉割版的H5标准</h2>
+                    <p>PC、移动端差别巨大</p>
+                    <p>存在不友好、不可控的H5实现</p>
+                </section>
+                <section>
+                    <h2>网络</h2>
+                    <p>毕竟带宽那么小</p>
+                    <p>合理使用资源</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>一些建议</h2>
+                </section>
+                <section>
+                    <p>不要逐帧优先</p>
+                    <p>首屏尽量每一k都是合理的</p>
+                    <p>多试试transform类型的动画</p>
+                    <p>偶尔做一些很牛B的</p>
+                    <p>我是不是可以向设计师提需求？</p>
+                </section>
+                <section>
+                    <p>不动的元素放在＃document层、要做动画的按规则分成</p>
+                    <p>运动物体超过10个建议用svg或canvas</p>
+                    <p>等上了U4我们动画都用webgl吧</p>
+                    <p>平时多预演、用时才有底</p>
+                    <p>多交流分享知识</p>
+                </section>
+            </section>
+            <section>
+                <h1>THE END</h1>
+                <h3>谢谢</h3>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-				<section>
-					<section>
-					<h2>我都懵逼了</h2>
-					<p>
-						what's the hell ~~
-					</p>
-					<p>
-						<img width="320" height="240" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaaa.jpg" alt="Down arrow">
-					</p>
-					</section>
-					<section>
-					<h2>我认识的前端不是这样的 >_< </h2>
-					<p>
-						<img width="410" height="157" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaa.gif" alt="Down arrow">
-					</p>
-					</section>
-					<section>
-					<h2>但是、我们做的是营销活动</h2>
-					<p>
-						<img width="410" height="254" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/woman.jpg" alt="Down arrow">
-					</p>
-					</section>
-				</section>
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-				<section>
-					<h2>用一用这些算法</h2>
-					<p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/butterfly/">欧拉角旋转、矩阵</a></p>
-					<p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/starsClouds/">高阶brezier、四元数、矩阵</a></p>
-					<p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/particle/">三角函数、矩阵</a></p>
-					<p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/svg/none/">物体运动</a></p>
-					<p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/traingle/">物体运动</a></p>
-					<p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/webgl/">高等数学</a></p>
-					<p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/flyTraingle/">带光照</a></p>
-					<p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/carGame/">完整一点的</a></p>
-				</section>
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
 
-				<section>
-					<section>
-						<h2>这么多动画怎么下手</h2>
-						<p>
-							<span class="fragment" data-fragment-index="0">没做过、</span>
-							<span class="fragment" data-fragment-index="1">性能怎么办、</span>
-							<span class="fragment" data-fragment-index="2">纠结、</span>
-						</p>
-						<p class="fragment visible current-fragment" data-fragment-index="3">
-							<span class="fragment" data-fragment-index="4">数学要好、</span>
-							<span class="fragment" data-fragment-index="5">物理要好、</span>
-						</p>
-						<p class="fragment visible current-fragment" data-fragment-index="6">
-							算法好像比业务算法要难
-						</p>
-					</section>
-					<section>
-						<h2>快来用我的库吧</h2>
-						<p>
-							轻量简单、不用了解底层API、做动画很顺手
-						</p>
-						<p>
-							<a target="_blank" href="https://jasonchen1982.github.io/jcc2d/">jcc2d</a>
-						</p>
-						<p>
-							<a target="_blank" href="https://jasonchen1982.github.io/jcw2d/">jcw2d</a>
-						</p>
-						<p>
-							<a target="_blank" href="http://100.84.85.21:5050/">jcw3d</a>
-						</p>
-					</section>
-				</section>
-
-				<section>
-					<h2>轻量级、适合移动端</h2>
-					<p>
-						<img width="500" height="226" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/haha.gif" alt="Down arrow">
-					</p>
-				</section>
-
-				<section>
-					<section>
-						<h2>移动端开发</h2>
-						<p>我们遇到的阻碍</p>
-					</section>
-					<section>
-						<h2>设备性能</h2>
-						<p>移动设备计算能力很差</p>
-						<p>浏览器总是无法兼容所有的GPU</p>
-					</section>
-					<section>
-						<h2>阉割版的H5标准</h2>
-						<p>PC、移动端差别巨大</p>
-						<p>存在不友好、不可控的H5实现</p>
-					</section>
-					<section>
-						<h2>网络</h2>
-						<p>毕竟带宽那么小</p>
-						<p>合理使用资源</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>一些建议</h2>
-					</section>
-					<section>
-						<p>不要逐帧优先</p>
-						<p>首屏尽量每一k都是合理的</p>
-						<p>多试试transform类型的动画</p>
-						<p>偶尔做一些很牛B的</p>
-						<p>我是不是可以向设计师提需求？</p>
-					</section>
-					<section>
-						<p>不动的元素放在＃document层、要做动画的按规则分成</p>
-						<p>运动物体超过10个建议用svg或canvas</p>
-						<p>等上了U4我们动画都用webgl吧</p>
-						<p>平时多预演、用时才有底</p>
-						<p>多交流分享知识</p>
-					</section>
-				</section>
-
-				<section>
-					<h1>THE END</h1>
-					<h3>谢谢</h3>
-				</section>
-
-			</div>
-
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
-
-	</body>
 </html>
