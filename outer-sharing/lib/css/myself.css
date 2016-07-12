@@ -1,0 +1,83 @@
+#animate_translate,#animate_rotate,#animate_skew,#animate_scale {
+    position: relative;
+    padding-left: 200px;
+    width: 400px;
+    margin: 20px auto 0;
+    height: 100px;
+}
+#animate_translate span,#animate_rotate span,#animate_skew span,#animate_scale span {
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 200px;
+    line-height: 100px;
+}
+#animate_translate div,#animate_rotate div,#animate_skew div,#animate_scale div {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+#animate_translate div {
+    background-color: #ff4a93;
+    animation: ani_translate 1s infinite alternate ease-in-out;
+    -webkit-animation: ani_translate 1s infinite alternate ease-in-out;
+}
+#animate_rotate div {
+    background-color: #2cbabe;
+    animation: ani_rotate 1s infinite alternate ease-in-out;
+    -webkit-animation: ani_rotate 1s infinite alternate ease-in-out;
+}
+#animate_skew div {
+    background-color: #ff1366;
+    animation: ani_skew 1s infinite alternate ease-in-out;
+    -webkit-animation: ani_skew 1s infinite alternate ease-in-out;
+}
+#animate_scale div {
+    background-color: #ffffff;
+    animation: ani_scale 1s infinite alternate ease-in-out;
+    -webkit-animation: ani_scale 1s infinite alternate ease-in-out;
+}
+@keyframes ani_translate
+{
+from {transform: translateX(-50px);}
+to {transform: translateX(50px);}
+}
+@-webkit-keyframes ani_translate 
+{
+from {-webkit-transform: translateX(-50px);}
+to {-webkit-transform: translateX(50px);}
+}
+
+@keyframes ani_rotate
+{
+from {transform: rotate(-50deg);}
+to {transform: rotate(50deg);}
+}
+@-webkit-keyframes ani_rotate 
+{
+from {-webkit-transform: rotate(-50deg);}
+to {-webkit-transform: rotate(50deg);}
+}
+
+@keyframes ani_skew
+{
+from {transform: skewY(-30deg);}
+to {transform: skewY(30deg);}
+}
+@-webkit-keyframes ani_skew 
+{
+from {-webkit-transform: skewY(-30deg);}
+to {-webkit-transform: skewY(30deg);}
+}
+
+
+@keyframes ani_scale
+{
+from {transform: scale(0.2);}
+to {transform: scale(1);}
+}
+@-webkit-keyframes ani_scale 
+{
+from {-webkit-transform: scale(0.2);}
+to {-webkit-transform: scale(1);}
+}
