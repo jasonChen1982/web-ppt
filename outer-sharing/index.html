@@ -34,7 +34,7 @@
         <div class="slides">
             <section>
                 <h1>canvas&WebGL</h1>
-                <h3>数学之美</h3>
+                <h4>深入了解HTML5提供的图形绘制接口</h4>
                 <p>
                     <small>Created by <a href="http://jason82.com">jasonChen</a></small>
                 </p>
@@ -60,13 +60,11 @@
                     </div>
                 </section>
                 <section>
-                    <h2>其他的动画</h2>
-                    <p><a target="_blank" href="http://100.84.85.21:5050/svg/coco/">线条动画</a></p>
-                    <p><a target="_blank" href="http://codepen.io/sol0mka/full/ogOYJj/">线条动画</a></p>
-                    <p><a target="_blank" href="http://tympanus.net/Development/ElasticProgress/">线条动画</a></p>
+                    <h2>复杂一点的动画</h2>
+                    <p><a target="_blank" href="http://100.84.245.21:5050/svg/coco/">线条动画</a></p>
                     <p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_skeleton_graphics">骨骼动画</a></p>
                     <p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle">粒子动画</a></p>
-                    <p><a target="_blank" href="http://100.84.85.21:5050/lowpolygon">低多边形动画</a></p>
+                    <p><a target="_blank" href="http://100.84.245.21:5050/lowpolygon">低多边形动画</a></p>
                 </section>
             </section>
             <!-- Example of nested vertical slides -->
@@ -112,9 +110,7 @@
                                 <td>webgl</td>
                                 <td>十项全能</td>
                                 <td>重度依赖GPU</td>
-                                <td>非常好
-                                    <del style="color: #f00;">UC</del>
-                                </td>
+                                <td>非常好</td>
                             </tr>
                         </tbody>
                     </table>
@@ -122,44 +118,53 @@
             </section>
             <section>
                 <section>
-                    <h2>相关算法</h2>
-                    <p>数学、物理、信号、图像</p>
+                    <h2>canvas</h2>
+                    <p>2d的绘图环境、形状、文字、位图</p>
                 </section>
                 <section>
-                    <h2>四元数</h2>
+                    <h2>你可能不知道的canvas</h2>
+                    <p>配合4*4列矩阵完成三维图形绘制</p>
+                    <p>所有三维空间的缔造者</p>
                     <pre>
-						<code class="hljs" data-trim contenteditable>
-// 三维空间旋转的基础
-// 能够进行球面插值
-p = x*i+y*j+z*k+w
-						</code>
-						</pre>
-                </section>
-                <section>
-                    <h2>欧拉角</h2>
-                    <p>最常用的描述物体旋转的方法</p>
-                </section>
-                <section>
-                    <h2>矩阵</h2>
-                    <p>所有三维空间的缔造者</p><pre>
-						<code class="hljs" data-trim contenteditable>
+                        <code class="hljs" data-trim contenteditable>
 | m00 m01 m02 m03 |   | x |
 | m10 m11 m12 m13 | * | y |
 | m20 m21 m22 m23 |   | z |
 | m30 m31 m32 m33 |   | w |
-						</code>
-						</pre>
+                        </code>
+                    </pre>
                 </section>
                 <section>
-                    <p>柏林噪声</p>
-                    <p>高阶brezier实时算法（二维、三维）</p>
-                    <p>boids仿生算法</p>
-                    <p>三角函数</p>
-                    <p>动量、冲量</p>
-                    <p>物体运动的运动因素模拟</p>
-                    <p>向量知识</p>
-                    <p>光线追踪</p>
-                    <p>巴拉巴拉...</p>
+                    <h2>简单的用下矩阵</h2>
+                    <p>transform: matrix(1,0,0,1,0,0)</p>
+                    <p>transform: matrix(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0)</p>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+| x` |   | m00 m01 m02 m03 |   | x |
+| y` | = | m10 m11 m12 m13 | * | y |
+| z` |   | m20 m21 m22 m23 |   | z |
+| w` |   | m30 m31 m32 m33 |   | w |
+
+x` = m00*x+m01*y+m02*z+m03*w
+
+y` = m10*x+m11*y+m12*z+m13*w
+
+z` = m20*x+m21*y+m22*z+m23*w
+
+w` = m30*x+m31*y+m32*z+m33*w
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>基于欧拉角的旋转矩阵</h2>
+                    <p>transform: rotateX(10deg) rotateY(10deg) rotateZ(10deg)</p>
+                    <p>
+                    <img width="160" height="120" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulerx.gif" alt="Down arrow">
+                    <span style="vertical-align:middle;color: red;font-size:50px;">*</span>
+                    <img width="160" height="120" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulery.gif" alt="Down arrow">
+                    <span style="vertical-align:middle;color: red;font-size:50px;">*</span>
+                    <img width="160" height="120" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulerz.gif" alt="Down arrow">
+                    </p>
                 </section>
             </section>
             <section>
@@ -177,24 +182,19 @@ p = x*i+y*j+z*k+w
                     <p>
                         <img width="410" height="157" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaa.gif" alt="Down arrow">
                     </p>
-                </section>
-                <section>
-                    <h2>但是！我们是做营销活动的</h2>
-                    <p>
-                        <img width="410" height="254" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/woman.jpg" alt="Down arrow">
-                    </p>
+                    <p style="font-size:26px;">前端不就是切切图、写写脚本、做做数据与视图渲染的吗。</p>
                 </section>
             </section>
             <section>
                 <h2>用一用这些算法</h2>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/butterfly/">欧拉角旋转、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/starsClouds/">高阶brezier、四元数、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/particle/">三角函数、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/svg/none/">物体运动</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/traingle/">物体运动</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/webgl/">高等数学</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/flyTraingle/">带光照</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.85.21:5050/carGame/">完整一点的</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.245.21:5050/butterfly/">欧拉角旋转、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.245.21:5050/starsClouds/">高阶brezier、四元数、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.245.21:5050/bottle/">三角函数、欧拉角、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.245.21:5050/sphere">空间几何、欧拉角、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.245.21:5050/traingle/">物体运动</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.245.21:5050/webgl/">空间几何、高等数学</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.245.21:5050/flyTraingle/">带光照</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://100.84.245.21:5050/carGame/">完整一点的</a></p>
             </section>
             <section>
                 <section>
@@ -204,12 +204,12 @@ p = x*i+y*j+z*k+w
                         <span class="fragment" data-fragment-index="1">性能怎么办、</span>
                         <span class="fragment" data-fragment-index="2">纠结、</span>
                     </p>
-                    <p class="fragment visible current-fragment" data-fragment-index="3">
-                        <span class="fragment" data-fragment-index="4">数学要好、</span>
-                        <span class="fragment" data-fragment-index="5">物理要好、</span>
+                    <p>
+                        <span class="fragment" data-fragment-index="3">数学要好、</span>
+                        <span class="fragment" data-fragment-index="4">物理要好、</span>
                     </p>
-                    <p class="fragment visible current-fragment" data-fragment-index="6">
-                        算法好像比业务算法要难
+                    <p class="fragment" data-fragment-index="5">
+                        图形算法好像比业务逻辑算法要难
                     </p>
                 </section>
                 <section>
@@ -223,16 +223,13 @@ p = x*i+y*j+z*k+w
                     <p>
                         <a target="_blank" href="https://jasonchen1982.github.io/jcw2d/">jcw2d</a>
                     </p>
+                </section>
+                <section>
+                    <h2 style="font-size:40px;">两个库的共同点：轻量级、适合移动端</h2>
                     <p>
-                        <a target="_blank" href="http://100.84.85.21:5050/">jcw3d</a>
+                        <img width="500" height="226" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/haha.gif" alt="Down arrow">
                     </p>
                 </section>
-            </section>
-            <section>
-                <h2>轻量级、适合移动端</h2>
-                <p>
-                    <img width="500" height="226" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/haha.gif" alt="Down arrow">
-                </p>
             </section>
             <section>
                 <section>
@@ -258,20 +255,9 @@ p = x*i+y*j+z*k+w
             <section>
                 <section>
                     <h2>一些建议</h2>
-                </section>
-                <section>
-                    <p>不要逐帧优先</p>
-                    <p>首屏尽量每一k都是合理的</p>
-                    <p>多试试transform类型的动画</p>
-                    <p>偶尔做一些很牛B的</p>
-                    <p>我是不是可以向设计师提需求？</p>
-                </section>
-                <section>
                     <p>不动的元素放在＃document层、要做动画的按规则分成</p>
                     <p>运动物体超过10个建议用svg或canvas</p>
-                    <p>等上了U4我们动画都用webgl吧</p>
-                    <p>平时多预演、用时才有底</p>
-                    <p>多交流分享知识</p>
+                    <p>合理布局，样式足以引起巨大的性能问题</p>
                 </section>
             </section>
             <section>
