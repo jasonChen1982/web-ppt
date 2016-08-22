@@ -87,17 +87,17 @@
                                 <th>性能</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody style="font-size:28px;">
                             <tr>
                                 <td>CSS3</td>
                                 <td>简单、支持广</td>
-                                <td>渲染量少</td>
+                                <td>渲染能力弱，局限大</td>
                                 <td>费劲</td>
                             </tr>
                             <tr>
                                 <td>SVG</td>
                                 <td>矢量、线条</td>
-                                <td>兼容性</td>
+                                <td>兼容性一般</td>
                                 <td>性能一般</td>
                             </tr>
                             <tr>
@@ -127,19 +127,6 @@
                     <p>所有三维空间的缔造者</p>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
-| m00 m01 m02 m03 |   | x |
-| m10 m11 m12 m13 | * | y |
-| m20 m21 m22 m23 |   | z |
-| m30 m31 m32 m33 |   | w |
-                        </code>
-                    </pre>
-                </section>
-                <section>
-                    <h2>简单的用下矩阵</h2>
-                    <p>transform: matrix(1,0,0,1,0,0)</p>
-                    <p>transform: matrix(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0)</p>
-                    <pre>
-                        <code class="hljs" data-trim contenteditable>
 | x` |   | m00 m01 m02 m03 |   | x |
 | y` | = | m10 m11 m12 m13 | * | y |
 | z` |   | m20 m21 m22 m23 |   | z |
@@ -156,14 +143,21 @@ w` = m30*x+m31*y+m32*z+m33*w
                     </pre>
                 </section>
                 <section>
+                    <h2>使用下矩阵</h2>
+                    <p>transform: scale(0.5,0.5)</p>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+
+                        </code>
+                    </pre>
+                </section>
+                <section>
                     <h2>基于欧拉角的旋转矩阵</h2>
-                    <p>transform: rotateX(10deg) rotateY(10deg) rotateZ(10deg)</p>
+                    <p>transform: rotateX(10deg) rotateY(10deg)</p>
                     <p>
                     <img width="160" height="120" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulerx.gif" alt="Down arrow">
                     <span style="vertical-align:middle;color: red;font-size:50px;">*</span>
                     <img width="160" height="120" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulery.gif" alt="Down arrow">
-                    <span style="vertical-align:middle;color: red;font-size:50px;">*</span>
-                    <img width="160" height="120" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulerz.gif" alt="Down arrow">
                     </p>
                 </section>
             </section>
