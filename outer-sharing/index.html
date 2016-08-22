@@ -33,7 +33,7 @@
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section>
-                <h1>canvas&WebGL</h1>
+                <h1>canvas<span style="opacity: 0.5;">&</span>WebGL</h1>
                 <h4>深入了解HTML5提供的图形绘制接口</h4>
                 <p>
                     <small>Created by <a href="http://jason82.com">jasonChen</a></small>
@@ -118,13 +118,20 @@
             </section>
             <section>
                 <section>
-                    <h2>canvas</h2>
+                    <h2>canvas 2d</h2>
                     <p>2d的绘图环境、形状、文字、位图</p>
                 </section>
                 <section>
-                    <h2>你可能不知道的canvas</h2>
-                    <p>配合4*4列矩阵完成三维图形绘制</p>
-                    <p>所有三维空间的缔造者</p>
+                    <h2>你可能不知道的canvas 2d</h2>
+                    <p>配合4*4矩阵可以完成三维图形绘制</p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/traingle/">4行4列矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/bottle/">4行4列矩阵、欧拉角</a></p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>矩阵是个啥？</h2>
+                    <p>线性代数、方程组、坐标变换的处理器</p>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
 | x` |   | m00 m01 m02 m03 |   | x |
@@ -143,16 +150,102 @@ w` = m30*x+m31*y+m32*z+m33*w
                     </pre>
                 </section>
                 <section>
-                    <h2>使用下矩阵</h2>
-                    <p>transform: scale(0.5,0.5)</p>
+                    <h2>单位矩阵</h2>
+                    <p>3*3矩阵可以描述2d空间内的坐标变换</p>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
+
+|1  0  0|
+|0  1  0|
+|0  0  1|
+
+乘以待变化的坐标(x,y) =>
+
+|1  0  0|   |x|
+|0  1  0| * |y|
+|0  0  1|   |1|
+
+x` = x*1 + 0*y + 0*1 = x
+y` =  0  + 1*y + 0*1 = y
 
                         </code>
                     </pre>
                 </section>
                 <section>
-                    <h2>基于欧拉角的旋转矩阵</h2>
+                    <h2>我们无意中用到过的矩阵</h2>
+                    <p>1、缩放：transform: scale(1.5,0.5)</p>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+|a  c|   |x|
+|b  d| * |y|
+
+x` = a*x + c*y
+y` = b*x + d*y
+
+c = b = 0
+
+所以可得 =>
+
+|1.5   0 |   |x|
+| 0   0.5| * |y|
+
+x` = 1.5 * x
+y` = 0.5 * y
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <p>2、旋转：rotate(90deg)</p>
+                    <p><img width="512" height="512" data-src="./imgs/rotate.png"></p>
+                </section>
+                <section>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+r = √(x^2+y^2)
+
+x` = cos(β+α)*r
+y` = sin(β+α)*r
+
+sin(β+α) = sin(β)cos(α)+cos(β)sin(α)
+cos(β+α) = cos(β)cos(α)-sin(β)sin(α)
+
+cos(α) = x/r
+sin(α) = y/r
+
+x` = (cos(β)x/r-sin(β)y/r)*r = cos(β)x-sin(β)y
+y` = (sin(β)x/r+cos(β)y/r)*r = sin(β)x+cos(β)y
+所以可得 =>
+|cos(β) -sin(β)|   |x|
+|sin(β)  cos(β)| * |y|
+
+x` = cos(β)x-sin(β)y
+y` = sin(β)x+cos(β)y
+
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <p>3、位移：transform: translate(100,50)</p>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+x` = x + tx
+y` = y + ty
+
+
+所以可得 =>
+
+|1  0  tx|   |x|
+|0  1  ty| * |y|
+|0  0   1|   |1|
+
+x` = 1*x + tx*1
+y` = 1*y + ty*1
+w` = 1*1
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>基于欧拉角的三维旋转矩阵</h2>
                     <p>transform: rotateX(10deg) rotateY(10deg)</p>
                     <p>
                     <img width="160" height="120" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulerx.gif" alt="Down arrow">
@@ -183,9 +276,7 @@ w` = m30*x+m31*y+m32*z+m33*w
                 <h2>用一用这些算法</h2>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/butterfly/">欧拉角旋转、矩阵</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/starsClouds/">高阶brezier、四元数、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/bottle/">三角函数、欧拉角、矩阵</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/sphere">空间几何、欧拉角、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/traingle/">物体运动</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/">空间几何、高等数学</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/pentagram/">欧拉角、矩阵</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/carGame/">完整一点的</a></p>
