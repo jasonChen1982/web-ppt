@@ -165,8 +165,8 @@ w` = m30*x+m31*y+m32*z+m33*w
 |0  1  0| * |y|
 |0  0  1|   |1|
 
-x` = x*1 + 0*y + 0*1 = x
-y` =  0  + 1*y + 0*1 = y
+x` = 1*x + 0*y + 0*1 = x
+y` = 0*x + 1*y + 0*1 = y
 
                         </code>
                     </pre>
@@ -195,31 +195,38 @@ y` = 0.5 * y
                     </pre>
                 </section>
                 <section>
-                    <p>2、旋转：rotate(90deg)</p>
-                    <p><img width="512" height="512" data-src="./imgs/rotate.png"></p>
+                    <p>2、旋转：rotate(βdeg)</p>
+                    <p><img width="480" height="480" data-src="./imgs/rotate.png"></p>
                 </section>
                 <section>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
 r = √(x^2+y^2)
 
-x` = cos(β+α)*r
-y` = sin(β+α)*r
+x` = cos(β+α) * r
+y` = sin(β+α) * r
 
-sin(β+α) = sin(β)cos(α)+cos(β)sin(α)
-cos(β+α) = cos(β)cos(α)-sin(β)sin(α)
+sin(β+α) = sin(β)cos(α) + cos(β)sin(α)
+cos(β+α) = cos(β)cos(α) - sin(β)sin(α)
 
 cos(α) = x/r
 sin(α) = y/r
 
-x` = (cos(β)x/r-sin(β)y/r)*r = cos(β)x-sin(β)y
-y` = (sin(β)x/r+cos(β)y/r)*r = sin(β)x+cos(β)y
+x` = (cos(β)x/r - sin(β)y/r) * r = cos(β)x - sin(β)y
+y` = (sin(β)x/r + cos(β)y/r) * r = sin(β)x + cos(β)y
+
 所以可得 =>
+
+|cos(β) -sin(β)|
+|sin(β)  cos(β)|
+
+验证下 =>
+
 |cos(β) -sin(β)|   |x|
 |sin(β)  cos(β)| * |y|
 
-x` = cos(β)x-sin(β)y
-y` = sin(β)x+cos(β)y
+x` = cos(β)x - sin(β)y
+y` = sin(β)x + cos(β)y
 
                         </code>
                     </pre>
@@ -257,15 +264,13 @@ w` = 1*1
             <section>
                 <section>
                     <h2>我都懵逼了...</h2>
-                    <p>
-                        what the hell ~~
-                    </p>
+                    <p>what the hell ~~</p>
                     <p>
                         <img width="320" height="240" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaaa.jpg" alt="Down arrow">
                     </p>
                 </section>
                 <section>
-                    <h2>我认识的前端不是这样的 >_<|| </h2>
+                    <h2>我认识的前端不是这样的 <span style="font-size: 40px;color: #fff;">&gt;_&lt;</span><span style="font-size: 26px;color: #fff;">||</span> </h2>
                     <p>
                         <img width="410" height="157" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaa.gif" alt="Down arrow">
                     </p>
@@ -299,17 +304,19 @@ w` = 1*1
                 </section>
                 <section>
                     <h2>开始一个简单的</h2>
-                    <iframe height='265' scrolling='no' src='//codepen.io/JasonChen1982/embed/preview/bZJBYB/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/bZJBYB/'>bZJBYB</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                    <p>来个demo压压惊</p>
+                    <iframe height='200' scrolling='no' src='//codepen.io/JasonChen1982/embed/preview/bZJBYB/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/bZJBYB/'>bZJBYB</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
                 </section>
             </section>
             <section>
                 <section>
-                    <h2>闲麻烦～懒ai末期？？</h2>
+                    <h2>代码好长、好麻烦～～</h2>
+                    <p>懒ai末期？？</p>
                 </section>
                 <section>
                     <h2>快来用我的库吧</h2>
                     <p>
-                        轻量简单、不用了解底层API、做动画很顺手很顺手
+                        轻量、简单、高性能、不用了解底层API、做动画很顺手很顺手
                     </p>
                     <p>
                         <a target="_blank" href="https://jasonchen1982.github.io/jcc2d/">jcc2d</a>
