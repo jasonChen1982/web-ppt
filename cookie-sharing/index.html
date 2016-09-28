@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>听说组织者会发大红包</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="lib/css/myself.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h2 id="title">CSS3 <span style="color: #cf009b;">→</span> canvas <span style="color: #cf009b;">→</span> WebGL</h2>
+                <h4>深入了解HTML5提供的图形绘制接口</h4>
+                <p>
+                    <small>Created by RED@<a href="http://jason82.com">jasonChen</a></small>
+                </p>
+            </section>
+            <section>
+                <h2>营销活动</h2>
+            </section>
+            <section>
+                <section>
+                    <h2>营销活动 <span style="color: #cf009b;">===</span> 动画、视觉特效</h2>
+                    <p>CSS3、SVG、canvas 2d、WebGL、webAudio</p>
+                </section>
+                <section style="text-align: left;">
+                    <p><span style="color: #cf009b;">CSS3:</span> transform、transform 3d </p>
+                    <p><span style="color: #cf009b;">SVG:</span> shape、path、line </p>
+                    <p><span style="color: #cf009b;">canvas 2d:</span> 2d绘图上下文、2.5D视觉效果 </p>
+                    <p><span style="color: #cf009b;">WebGL:</span> 3d绘图上下文、2D动画、3D动画、VR、AR </p>
+                    <p><span style="color: #cf009b;">webAudio:</span> 立体音效、音频处理、音频可视化 </p>
+                </section>
+                <section>
+                    <h2>性能和优势</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>方案</th>
+                                <th>优势</th>
+                                <th>缺点</th>
+                                <th>性能</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:28px;">
+                            <tr>
+                                <td>CSS3</td>
+                                <td>简单、支持广</td>
+                                <td>渲染能力弱，局限大</td>
+                                <td>费劲</td>
+                            </tr>
+                            <tr>
+                                <td>SVG</td>
+                                <td>矢量、线条</td>
+                                <td>兼容性一般</td>
+                                <td>性能一般</td>
+                            </tr>
+                            <tr>
+                                <td>canvas</td>
+                                <td>点线面全能</td>
+                                <td>依赖GPU</td>
+                                <td>性能较好</td>
+                            </tr>
+                            <tr>
+                                <td>webgl</td>
+                                <td>十项全能</td>
+                                <td>重度依赖GPU</td>
+                                <td>非常好</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>常见的动画</h2>
+                    <div id="animate_translate">
+                        <span>位移动画</span>
+                        <div></div>
+                    </div>
+                    <div id="animate_rotate">
+                        <span>旋转动画</span>
+                        <div></div>
+                    </div>
+                    <div id="animate_scale">
+                        <span>缩放动画</span>
+                        <div></div>
+                    </div>
+                    <div id="animate_skew">
+                        <span>斜切动画</span>
+                        <div></div>
+                    </div>
+                </section>
+                <section>
+                    <h2>复杂一点的动画</h2>
+                    <p><a target="_blank" href="http://127.0.0.1:5050/svg/coco/">线条动画</a></p>
+                    <p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_skeleton_graphics">骨骼动画</a></p>
+                    <p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle">粒子动画</a></p>
+                    <p><a target="_blank" href="http://127.0.0.1:5050/lowpolygon">低多边形动画</a></p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>canvas 2d</h2>
+                    <p>2d的绘图环境、形状、文字、位图</p>
+                </section>
+                <section>
+                    <h2>你可能不知道的canvas 2d</h2>
+                    <p>配合4*4矩阵可以完成三维图形绘制</p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/traingle/">4行4列矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/bottle/">4行4列矩阵、欧拉角</a></p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>矩阵是个啥？</h2>
+                    <p>线性代数、方程组、坐标变换的处理器</p>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+| x` |   | m00 m01 m02 m03 |   | x |
+| y` | = | m10 m11 m12 m13 | * | y |
+| z` |   | m20 m21 m22 m23 |   | z |
+| w` |   | m30 m31 m32 m33 |   | w |
+
+x` = m00*x+m01*y+m02*z+m03*w
+
+y` = m10*x+m11*y+m12*z+m13*w
+
+z` = m20*x+m21*y+m22*z+m23*w
+
+w` = m30*x+m31*y+m32*z+m33*w
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>单位矩阵</h2>
+                    <p>3*3矩阵可以描述2d空间内的坐标变换</p>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+
+|1  0  0|
+|0  1  0|
+|0  0  1|
+
+乘以待变化的坐标(x,y) =>
+
+|1  0  0|   |x|
+|0  1  0| * |y|
+|0  0  1|   |1|
+
+x` = 1*x + 0*y + 0*1 = x
+y` = 0*x + 1*y + 0*1 = y
+
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>我们无意中用到过的矩阵</h2>
+                    <p>1、缩放：transform: scale(1.5,0.5)</p>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+|a  c|   |x|
+|b  d| * |y|
+
+x` = a*x + c*y
+y` = b*x + d*y
+
+c = b = 0
+
+所以可得 =>
+
+|1.5   0 |   |x|
+| 0   0.5| * |y|
+
+x` = 1.5 * x
+y` = 0.5 * y
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <p>2、旋转：rotate(βdeg)</p>
+                    <p><img width="480" height="480" data-src="./imgs/rotate.png"></p>
+                </section>
+                <section>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+r = √(x^2+y^2)
+
+x` = cos(β+α) * r
+y` = sin(β+α) * r
+
+sin(β+α) = sin(β)cos(α) + cos(β)sin(α)
+cos(β+α) = cos(β)cos(α) - sin(β)sin(α)
+
+cos(α) = x/r
+sin(α) = y/r
+
+x` = (cos(β)x/r - sin(β)y/r) * r = cos(β)x - sin(β)y
+y` = (sin(β)x/r + cos(β)y/r) * r = sin(β)x + cos(β)y
+
+所以可得 =>
+
+|cos(β) -sin(β)|
+|sin(β)  cos(β)|
+
+验证下 =>
+
+|cos(β) -sin(β)|   |x|
+|sin(β)  cos(β)| * |y|
+
+x` = cos(β)x - sin(β)y
+y` = sin(β)x + cos(β)y
+
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <p>3、位移：transform: translate(100,50)</p>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+x` = x + tx
+y` = y + ty
+
+
+
+
+
+
+
+
+
+
+所以可得 =>
+
+
+
+
+
+
+
+|1  0  tx|   |x|
+|0  1  ty| * |y|
+|0  0   1|   |1|
+
+x` = 1*x + tx*1
+y` = 1*y + ty*1
+w` = 1*1
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>基于欧拉角的三维旋转矩阵</h2>
+                    <p>transform: rotateX(10deg) rotateY(10deg)</p>
+                    <p>
+                    <img width="280" height="160" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulerx.png" alt="Down arrow">
+                    <span style="vertical-align:middle;color: red;font-size:50px;">*</span>
+                    <img width="280" height="160" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulery.png" alt="Down arrow">
+                    </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>我都懵逼了...</h2>
+                    <p>what the hell ~~</p>
+                    <p>
+                        <img width="320" height="240" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaaa.jpg" alt="Down arrow">
+                    </p>
+                </section>
+                <section>
+                    <h2>我认识的前端不是这样的 <span style="font-size: 40px;color: #fff;">&gt;_&lt;</span><span style="font-size: 26px;color: #fff;">||</span> </h2>
+                    <p>
+                        <img width="410" height="157" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaa.gif" alt="Down arrow">
+                    </p>
+                    <p style="font-size:20px;">写写脚本、做做数据与视图渲染、管管后端路由模版控制器的吗。</p>
+                </section>
+            </section>
+            <section>
+                <h2>这些算法能做什么</h2>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/butterfly/">欧拉角旋转、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/starsClouds/">高阶brezier、四元数、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/sphere">空间几何、欧拉角、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/">空间几何、高等数学</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/pentagram/">欧拉角、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/starsCloudsVR/">还可以这样玩</a></p>
+            </section>
+            <section>
+                <section>
+                    <h2>这么多动画怎么下手</h2>
+                    <p>
+                        <span class="fragment" data-fragment-index="0">没做过、</span>
+                        <span class="fragment" data-fragment-index="1">性能怎么办、</span>
+                        <span class="fragment" data-fragment-index="2">纠结、</span>
+                    </p>
+                    <p>
+                        <span class="fragment" data-fragment-index="3">数学要好、</span>
+                        <span class="fragment" data-fragment-index="4">物理要好、</span>
+                    </p>
+                    <p class="fragment" data-fragment-index="5">
+                        图形算法好像比处理业务逻辑要难
+                    </p>
+                </section>
+                <section>
+                    <h2>canvas 2d API 实现3D效果的原理</h2>
+                </section>
+                <section>
+                    <h2>开始一个简单的</h2>
+                    <p>来个demo压压惊</p>
+                    <iframe height='200' scrolling='no' src='//codepen.io/JasonChen1982/embed/preview/bZJBYB/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/bZJBYB/'>bZJBYB</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>代码好长、好麻烦～～</h2>
+                    <p>懒ai末期？？</p>
+                </section>
+                <section>
+                    <h2>快来用我的库吧</h2>
+                    <p>
+                        轻量、简单、高性能、不用了解底层API、做动画很顺手很顺手
+                    </p>
+                    <p>
+                        <a target="_blank" href="https://jasonchen1982.github.io/jcc2d/">jcc2d</a>
+                    </p>
+                    <p>
+                        <a target="_blank" href="https://jasonchen1982.github.io/jcw2d/">jcw2d</a>
+                    </p>
+                </section>
+                <section>
+                    <h2 style="font-size:40px;">两个库的共同点：轻量级、适合移动端</h2>
+                    <p>
+                        <img width="500" height="226" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/haha.gif" alt="Down arrow">
+                    </p>
+                </section>
+            </section>
+            <section>
+                <h2>浏览器从DOM树到renderLayer树的过程</h2>
+            </section>
+            <section>
+                <section>
+                    <h2>性能优化</h2>
+                    <p>浏览器渲染能力、硬件加速</p>
+                </section>
+                <section>
+                    <h2>合成层的重要性</h2>
+                    <p>合理的划分合成层可以让你的css动画获得最好的性能</p>
+                    <p>了解那些样式可以触发合成层</p>
+                    <p>perspective、transform3d、clip、被动触发</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>移动端开发</h2>
+                    <p>我们遇到的阻碍</p>
+                </section>
+                <section>
+                    <h2>设备性能</h2>
+                    <p>移动设备计算能力很差</p>
+                    <p>浏览器总是无法兼容所有的GPU</p>
+                </section>
+                <section>
+                    <h2>阉割版的H5标准</h2>
+                    <p>PC、移动端差别巨大</p>
+                    <p>存在不友好、不可控的H5实现</p>
+                </section>
+                <section>
+                    <h2>网络</h2>
+                    <p>毕竟带宽那么小</p>
+                    <p>合理使用资源</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>一些建议</h2>
+                    <p>不动的元素放在＃document层、要做动画的按规则划分合成层</p>
+                    <p>运动物体超过10个建议用svg或canvas</p>
+                    <p>合理布局，样式足以引起巨大的性能问题</p>
+                </section>
+            </section>
+            <section>
+                <h1>Q&A</h1>
+            </section>
+            <section>
+                <h1>THE END</h1>
+                <h3>谢谢</h3>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>
