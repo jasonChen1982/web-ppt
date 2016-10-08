@@ -45,14 +45,24 @@
             <section>
                 <section>
                     <h2>营销活动 <span style="color: #cf009b;">===</span> 动画、视觉特效</h2>
-                    <p>CSS3、SVG、canvas 2d、WebGL、webAudio</p>
+                    <!-- <p>CSS3、SVG、canvas 2d、WebGL、webAudio</p> -->
                 </section>
-                <section style="text-align: left;">
-                    <p><span style="color: #cf009b;">CSS3:</span> transform、transform 3d </p>
+                <section>
+                    <h3>涉及哪些技术</h3>
+                    <p>
+                        <span class="fragment" data-fragment-index="0">CSS3动画</span>
+                        <span class="fragment" data-fragment-index="1">SVG动画</span>
+                        <span class="fragment" data-fragment-index="2">canvas画布动画</span>
+                    </p>
+                    <p>
+                        <span class="fragment" data-fragment-index="3">WebGL动画</span>
+                        <span class="fragment" data-fragment-index="4">webAudio音频多媒体...</span>
+                    </p>
+                    <!-- <p><span style="color: #cf009b;">CSS3:</span> transform、transform 3d </p>
                     <p><span style="color: #cf009b;">SVG:</span> shape、path、line </p>
                     <p><span style="color: #cf009b;">canvas 2d:</span> 2d绘图上下文、2.5D视觉效果 </p>
                     <p><span style="color: #cf009b;">WebGL:</span> 3d绘图上下文、2D动画、3D动画、VR、AR </p>
-                    <p><span style="color: #cf009b;">webAudio:</span> 立体音效、音频处理、音频可视化 </p>
+                    <p><span style="color: #cf009b;">webAudio:</span> 立体音效、音频处理、音频可视化 </p> -->
                 </section>
                 <section>
                     <h2>性能和优势</h2>
@@ -90,13 +100,19 @@
                                 <td>重度依赖GPU</td>
                                 <td>非常好</td>
                             </tr>
+                            <tr>
+                                <td>webAudio</td>
+                                <td>音频处理能力</td>
+                                <td>浏览器依赖</td>
+                                <td><del style="color: #f00;">U3 U4</del></td>
+                            </tr>
                         </tbody>
                     </table>
                 </section>
             </section>
             <section>
                 <section>
-                    <h2>常见的动画</h2>
+                    <h2>常见的动画类型</h2>
                     <div id="animate_translate">
                         <span>位移动画</span>
                         <div></div>
@@ -123,7 +139,7 @@
                 </section>
             </section>
             <section>
-                <h2>浏览器底层是怎么实现transform功能的？</h2>
+                <h2 >浏览器底层是怎么实现<span style="text-transform:lowercase;">transform</span>功能的？</h2>
             </section>
             <section>
                 <section>
@@ -140,7 +156,8 @@
             <section>
                 <section>
                     <h2>矩阵是个啥？</h2>
-                    <p>线性代数、方程组、坐标变换的处理器</p>
+                    <p>线性代数、方程组</p>
+                    <p>几何意义：防射变换的处理器</p>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
 | x` |   | m00 m01 m02 m03 |   | x |
@@ -170,12 +187,13 @@ w` = m30*x+m31*y+m32*z+m33*w
 
 乘以待变化的坐标(x,y) =>
 
-|1  0  0|   |x|
-|0  1  0| * |y|
-|0  0  1|   |1|
+|x`|   |1  0  0|   |x|
+|y`| = |0  1  0| * |y|
+|1 |   |0  0  1|   |1|
 
 x` = 1*x + 0*y + 0*1 = x
 y` = 0*x + 1*y + 0*1 = y
+1  = 0*x + 0*y + 1*1 = 1
 
                         </code>
                     </pre>
@@ -286,18 +304,11 @@ w` = 1*1
             </section>
             <section>
                 <section>
-                    <h2>我都懵逼了...</h2>
+                    <h2>有点懵逼了...</h2>
                     <p>what the hell ~~</p>
                     <p>
                         <img width="320" height="240" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaaa.jpg" alt="Down arrow">
                     </p>
-                </section>
-                <section>
-                    <h2>我认识的前端不是这样的 <span style="font-size: 40px;color: #fff;">&gt;_&lt;</span><span style="font-size: 26px;color: #fff;">||</span> </h2>
-                    <p>
-                        <img width="410" height="157" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaa.gif" alt="Down arrow">
-                    </p>
-                    <p style="font-size:20px;">写写脚本、做做数据与视图渲染、管管后端路由模版控制器的吗。</p>
                 </section>
             </section>
             <section>
@@ -322,16 +333,13 @@ w` = 1*1
                         <span class="fragment" data-fragment-index="4">物理要好、</span>
                     </p>
                     <p class="fragment" data-fragment-index="5">
-                        图形算法好像比处理业务逻辑要难
+                        图形算法并不比处理业务逻辑简单啊
                     </p>
-                </section>
-                <section>
-                    <h2>canvas 2d API 实现3D效果的原理</h2>
                 </section>
                 <section>
                     <h2>开始一个简单的</h2>
                     <p>来个demo压压惊</p>
-                    <iframe height='200' scrolling='no' src='//codepen.io/JasonChen1982/embed/preview/bZJBYB/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/bZJBYB/'>bZJBYB</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                    <iframe height='260' scrolling='no' src='//codepen.io/JasonChen1982/embed/preview/bZJBYB/?height=320&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/bZJBYB/'>bZJBYB</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
                 </section>
             </section>
             <section>
@@ -340,21 +348,16 @@ w` = 1*1
                     <p>懒ai末期？？</p>
                 </section>
                 <section>
-                    <h2>快来用我的库吧</h2>
+                    <h2>你可以用用这个库</h2>
                     <p>
-                        轻量、简单、高性能、不用了解底层API、做动画很顺手很顺手
+                        轻量、简单、高性能
                     </p>
+                    <p>特点：轻量级、适合移动端</p>
                     <p>
                         <a target="_blank" href="https://jasonchen1982.github.io/jcc2d/">jcc2d</a>
                     </p>
                     <p>
                         <a target="_blank" href="https://jasonchen1982.github.io/jcw2d/">jcw2d</a>
-                    </p>
-                </section>
-                <section>
-                    <h2 style="font-size:40px;">两个库的共同点：轻量级、适合移动端</h2>
-                    <p>
-                        <img width="500" height="226" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/haha.gif" alt="Down arrow">
                     </p>
                 </section>
             </section>
