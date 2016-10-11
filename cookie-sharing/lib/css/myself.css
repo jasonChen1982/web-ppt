@@ -110,3 +110,86 @@ to {-webkit-transform: scale(1);}
     transform-origin: right center;
 }
 
+#view_box_3d {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto 0;
+    perspective: 400px;
+}
+#cube_box_3d {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 160px;
+    height: 160px;
+    margin: -80px 0 0 -80px;
+    transform-style: preserve-3d;
+    animation: ani_rotate_3d 2s infinite alternate ease-in-out;
+    -webkit-animation: ani_rotate_3d 2s infinite alternate ease-in-out;
+}
+#cube_box_3d .face_normal {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    transform-style: preserve-3d;
+}
+#cube_box_3d .face_front {
+    left: 0;
+    top: 0;
+    transform: translateZ(80px);
+    background-color: rgba(254, 67, 101, 0.8)
+}
+#cube_box_3d .face_back {
+    left: 0;
+    top: 0;
+    transform: translateZ(-80px);
+    background-color: rgba(252, 157, 154, 0.8);
+}
+#cube_box_3d .face_left {
+    left: -50%;
+    top: 0;
+    transform: rotateY(-90deg);
+    background-color: rgba(249, 205, 173, 0.8);
+}
+#cube_box_3d .face_right {
+    right: -50%;
+    top: 0;
+    transform: rotateY(90deg);
+    background-color: rgba(200, 200, 169, 0.8);
+}
+#cube_box_3d .face_top {
+    left: 0;
+    top: -50%;
+    transform: rotateX(-90deg);
+    background-color: rgba(131, 175, 155, 0.8);
+}
+#cube_box_3d .face_bottom {
+    left: 0;
+    bottom: -50%;
+    transform: rotateX(90deg);
+    background-color: rgba(120, 255, 112, 0.8);
+}
+
+
+@keyframes ani_rotate_3d
+{
+from {transform: rotateY(0);}
+to {transform: rotateY(360deg);}
+}
+@-webkit-keyframes ani_rotate_3d 
+{
+from {-webkit-transform: rotateY(0);}
+to {-webkit-transform: rotateY(360deg);}
+}
+
+
+
+
+
+
+
+
+
+
+

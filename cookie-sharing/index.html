@@ -44,7 +44,7 @@
             </section>
             <section>
                 <section>
-                    <h2>营销活动 <span style="color: #cf009b;">===</span> 动画、视觉特效</h2>
+                    <h2>营销活动 <span style="color: #cf009b;">===</span> 动画 <span style="color: #cf009b;">+</span> 视觉特效</h2>
                     <!-- <p>CSS3、SVG、canvas 2d、WebGL、webAudio</p> -->
                 </section>
                 <section>
@@ -52,11 +52,12 @@
                     <p>
                         <span class="fragment" data-fragment-index="0">CSS3动画</span>
                         <span class="fragment" data-fragment-index="1">SVG动画</span>
-                        <span class="fragment" data-fragment-index="2">canvas画布动画</span>
+                        <span class="fragment" data-fragment-index="2">canvas动画</span>
                     </p>
                     <p>
                         <span class="fragment" data-fragment-index="3">WebGL动画</span>
-                        <span class="fragment" data-fragment-index="4">webAudio音频多媒体...</span>
+                        <span class="fragment" data-fragment-index="4">webAudio音频</span>
+                        <span class="fragment" data-fragment-index="5">各种多媒体...</span>
                     </p>
                     <!-- <p><span style="color: #cf009b;">CSS3:</span> transform、transform 3d </p>
                     <p><span style="color: #cf009b;">SVG:</span> shape、path、line </p>
@@ -65,7 +66,7 @@
                     <p><span style="color: #cf009b;">webAudio:</span> 立体音效、音频处理、音频可视化 </p> -->
                 </section>
                 <section>
-                    <h2>性能和优势</h2>
+                    <h2>特点和优缺点</h2>
                     <table>
                         <thead>
                             <tr>
@@ -112,7 +113,11 @@
             </section>
             <section>
                 <section>
-                    <h2>常见的动画类型</h2>
+                    <h2>CSS3 <span style="text-transform:lowercase;">transform</span></h2>
+                    <p>给CSS带来本质变化的功能</p>
+                </section>
+                <section>
+                    <h2>常见的CSS3动画</h2>
                     <div id="animate_translate">
                         <span>位移动画</span>
                         <div></div>
@@ -131,29 +136,59 @@
                     </div>
                 </section>
                 <section>
+                    <h2>CSS3 带来的三维</h2>
+                    <div id="animate_rotate_3d">
+                        <span>3D旋转动画</span>
+                        <div id="view_box_3d">
+                            <div id="cube_box_3d">
+                                <span class="face_normal face_front"></span>
+                                <span class="face_normal face_back"></span>
+                                <span class="face_normal face_left"></span>
+                                <span class="face_normal face_right"></span>
+                                <span class="face_normal face_top"></span>
+                                <span class="face_normal face_bottom"></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- <section>
                     <h2>复杂一点的动画</h2>
                     <p><a target="_blank" href="http://127.0.0.1:5050/svg/coco/">线条动画</a></p>
                     <p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_skeleton_graphics">骨骼动画</a></p>
                     <p><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle">粒子动画</a></p>
                     <p><a target="_blank" href="http://127.0.0.1:5050/lowpolygon">低多边形动画</a></p>
-                </section>
+                </section> -->
             </section>
             <section>
-                <h2 >浏览器底层是怎么实现<span style="text-transform:lowercase;">transform</span>功能的？</h2>
+                <h2 >浏览器底层是怎么实现CSS3的<span style="text-transform:lowercase;">transform</span>功能的？</h2>
+            </section>
+            <section>
+                <h2 >莫急，我们先来看看canvas</h2>
             </section>
             <section>
                 <section>
                     <h2>canvas 2d</h2>
                     <p>2d的绘图环境、形状、文字、位图</p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="https://jasonchen1982.github.io/jcc2d/examples/demo_timingfunction_allInOne/">利用transform实现的动画</a></p>
                 </section>
                 <section>
                     <h2>你可能不知道的canvas 2d</h2>
                     <p>配合4*4矩阵可以完成三维图形绘制</p>
-                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/traingle/">4行4列矩阵</a></p>
-                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/bottle/">4行4列矩阵、欧拉角</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/flyTraingle/">4行4列矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/traingle/">4行4列矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/particle/">4行4列矩阵、透视投影矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/bottle/">4行4列矩阵、欧拉角、透视投影矩阵</a></p>
                 </section>
             </section>
             <section>
+                <h2>讲回之前的<span style="text-transform:lowercase;">transform</span>问题</h2>
+                <p>浏览器在底层是怎么实现<span style="text-transform:lowercase;">transform</span>的呢？</p>
+                <p><span style="text-transform:lowercase;">transform</span>是怎么实现位移、旋转、缩放效果的呢？</p>
+            </section>
+            <section>
+                <section>
+                    <h3>矩阵 Matrix</h3>
+                </section>
                 <section>
                     <h2>矩阵是个啥？</h2>
                     <p>线性代数、方程组</p>
@@ -165,13 +200,13 @@
 | z` |   | m20 m21 m22 m23 |   | z |
 | w` |   | m30 m31 m32 m33 |   | w |
 
-x` = m00*x+m01*y+m02*z+m03*w
+x` = m00*x + m01*y + m02*z + m03*w
 
-y` = m10*x+m11*y+m12*z+m13*w
+y` = m10*x + m11*y + m12*z + m13*w
 
-z` = m20*x+m21*y+m22*z+m23*w
+z` = m20*x + m21*y + m22*z + m23*w
 
-w` = m30*x+m31*y+m32*z+m33*w
+w` = m30*x + m31*y + m32*z + m33*w
                         </code>
                     </pre>
                 </section>
@@ -198,6 +233,8 @@ y` = 0*x + 1*y + 0*1 = y
                         </code>
                     </pre>
                 </section>
+            </section>
+            <section>
                 <section>
                     <h2>我们无意中用到过的矩阵</h2>
                     <p>1、缩放：transform: scale(1.5,0.5)</p>
@@ -262,8 +299,8 @@ y` = sin(β)x + cos(β)y
                     <p>3、位移：transform: translate(100,50)</p>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
-x` = x + tx
-y` = y + ty
+x` = x + tx = 1*x + 0*y + tx*1
+y` = y + ty = 0*x + 1*y + ty*1
 
 
 
@@ -296,9 +333,9 @@ w` = 1*1
                     <h2>基于欧拉角的三维旋转矩阵</h2>
                     <p>transform: rotateX(10deg) rotateY(10deg)</p>
                     <p>
-                    <img width="280" height="160" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulerx.png" alt="Down arrow">
+                    <img width="280" height="160" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulerx.png">
                     <span style="vertical-align:middle;color: red;font-size:50px;">*</span>
-                    <img width="280" height="160" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulery.png" alt="Down arrow">
+                    <img width="280" height="160" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulery.png">
                     </p>
                 </section>
             </section>
@@ -307,18 +344,19 @@ w` = 1*1
                     <h2>有点懵逼了...</h2>
                     <p>what the hell ~~</p>
                     <p>
-                        <img width="320" height="240" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaaa.jpg" alt="Down arrow">
+                        <img width="320" height="240" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaaa.jpg">
                     </p>
                 </section>
             </section>
             <section>
-                <h2>这些算法能做什么</h2>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/butterfly/">欧拉角旋转、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/starsClouds/">高阶brezier、四元数、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/sphere">空间几何、欧拉角、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/">空间几何、高等数学</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/pentagram/">欧拉角、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/starsCloudsVR/">还可以这样玩</a></p>
+                <h2>知道矩阵又能做什么呢？</h2>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/butterfly/">欧拉角旋转、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsClouds/">高阶bezier、四元数、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/sphere/">空间几何、欧拉角、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webAudio/music/">快速傅立叶变换、音频解析</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/">空间几何、高等数学、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/pentagram/">欧拉角、矩阵</a></p>
+                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/simplexNoise/">成型一点的</a></p>
             </section>
             <section>
                 <section>
@@ -362,47 +400,35 @@ w` = 1*1
                 </section>
             </section>
             <section>
-                <h2>浏览器从DOM树到renderLayer树的过程</h2>
-            </section>
-            <section>
                 <section>
-                    <h2>性能优化</h2>
-                    <p>浏览器渲染能力、硬件加速</p>
+                    <h2>谈谈VR、AR</h2>
                 </section>
                 <section>
-                    <h2>合成层的重要性</h2>
-                    <p>合理的划分合成层可以让你的css动画获得最好的性能</p>
-                    <p>了解那些样式可以触发合成层</p>
-                    <p>perspective、transform3d、clip、被动触发</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <h2>移动端开发</h2>
-                    <p>我们遇到的阻碍</p>
+                    <h2>VR<span style="color: #cf009b;"> → </span>Web VR<span style="color: #cf009b;"> → </span>VR 视觉</h2>
                 </section>
                 <section>
-                    <h2>设备性能</h2>
-                    <p>移动设备计算能力很差</p>
-                    <p>浏览器总是无法兼容所有的GPU</p>
+                    <h2>web端如何实现VR视觉</h2>
+                    <p>先上原理：干啥都得先懂原理</p>
                 </section>
                 <section>
-                    <h2>阉割版的H5标准</h2>
-                    <p>PC、移动端差别巨大</p>
-                    <p>存在不友好、不可控的H5实现</p>
+                    <h2>上demo</h2>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsCloudsVR/">用VR增强的星空</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/flyCarVR/">赶出来的demo</a></p>
                 </section>
                 <section>
-                    <h2>网络</h2>
-                    <p>毕竟带宽那么小</p>
-                    <p>合理使用资源</p>
+                    <h2>AR</h2>
                 </section>
-            </section>
-            <section>
                 <section>
-                    <h2>一些建议</h2>
-                    <p>不动的元素放在＃document层、要做动画的按规则划分合成层</p>
-                    <p>运动物体超过10个建议用svg或canvas</p>
-                    <p>合理布局，样式足以引起巨大的性能问题</p>
+                    <h2>AR是怎么实现的</h2>
+                    <p>讲讲原理</p>
+                </section>
+                <section>
+                    <h2>demo</h2>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webglAR/">WebGL从视频画面解算照相机参数</a></p>
+                </section>
+                <section>
+                    <h2>遇到的麻烦</h2>
+                    <p style="font-size: 30px;line-height: 40px;">浏览器对媒体硬件的支持、视频图像内容的实时读取</p>
                 </section>
             </section>
             <section>
