@@ -173,7 +173,7 @@
                 </section>
                 <section>
                     <h2>你可能不知道的canvas 2d</h2>
-                    <p>配合4*4矩阵可以完成三维图形绘制</p>
+                    <p>配合4*4矩阵可以实现三维效果</p>
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/flyTraingle/">4行4列矩阵</a></p>
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/traingle/">4行4列矩阵</a></p>
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/particle/">4行4列矩阵、透视投影矩阵</a></p>
@@ -190,29 +190,36 @@
                     <h3>矩阵 Matrix</h3>
                 </section>
                 <section>
-                    <h2>矩阵是个啥？</h2>
+                    <h3>矩阵是个啥？</h3>
                     <p>线性代数、方程组</p>
-                    <p>几何意义：防射变换的处理器</p>
+                    <p>几何意义：描述几何空间的仿射变换</p>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
-| x` |   | m00 m01 m02 m03 |   | x |
-| y` | = | m10 m11 m12 m13 | * | y |
-| z` |   | m20 m21 m22 m23 |   | z |
-| w` |   | m30 m31 m32 m33 |   | w |
-
-x` = m00*x + m01*y + m02*z + m03*w
-
-y` = m10*x + m11*y + m12*z + m13*w
-
-z` = m20*x + m21*y + m22*z + m23*w
-
-w` = m30*x + m31*y + m32*z + m33*w
+| m00 m01 m02 |
+| m10 m11 m12 |
+| m20 m21 m22 |
                         </code>
                     </pre>
                 </section>
                 <section>
-                    <h2>单位矩阵</h2>
-                    <p>3*3矩阵可以描述2d空间内的坐标变换</p>
+                    <h3>矩阵乘法</h3>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+| x` |   | m00 m01 m02 |   | x |
+| y` | = | m10 m11 m12 | * | y |
+| w` |   | m20 m21 m22 |   | w |
+
+x` = m00*x + m01*y + m02*w
+
+y` = m10*x + m11*y + m12*w
+
+w` = m20*x + m21*y + m22*w
+
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>单位矩阵</h3>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
 定理
@@ -224,11 +231,11 @@ w` = m30*x + m31*y + m32*z + m33*w
 
 |x`|   |1  0  0|   |x|
 |y`| = |0  1  0| * |y|
-|1 |   |0  0  1|   |1|
+|w`|   |0  0  1|   |w|
 
-x` = 1*x + 0*y + 0*1 = x
-y` = 0*x + 1*y + 0*1 = y
-1  = 0*x + 0*y + 1*1 = 1
+x` = 1*x + 0*y + 0*w = x
+y` = 0*x + 1*y + 0*w = y
+w` = 0*x + 0*y + 1*w = w
 
                         </code>
                     </pre>
@@ -240,18 +247,21 @@ y` = 0*x + 1*y + 0*1 = y
                     <p>1、缩放：transform: scale(1.5,0.5)</p>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
-|a  c|   |x|
-|b  d| * |y|
+|x`|   |a  c|   |x|
+|y`| = |b  d| * |y|
 
 x` = a*x + c*y
 y` = b*x + d*y
 
 c = b = 0
 
+x` = a*x
+y` = d*y
+
 所以可得 =>
 
-|1.5   0 |   |x|
-| 0   0.5| * |y|
+|x`|   |1.5   0 |   |x|
+|y`| = | 0   0.5| * |y|
 
 x` = 1.5 * x
 y` = 0.5 * y
@@ -267,27 +277,30 @@ y` = 0.5 * y
                         <code class="hljs" data-trim contenteditable>
 r = √(x^2+y^2)
 
+// 单位圆得到等式
 x` = cos(β+α) * r
 y` = sin(β+α) * r
 
+// 和差化积公式
 sin(β+α) = sin(β)cos(α) + cos(β)sin(α)
 cos(β+α) = cos(β)cos(α) - sin(β)sin(α)
 
 cos(α) = x/r
 sin(α) = y/r
 
+// 愉快的代入
 x` = (cos(β)x/r - sin(β)y/r) * r = cos(β)x - sin(β)y
 y` = (sin(β)x/r + cos(β)y/r) * r = sin(β)x + cos(β)y
 
-所以可得 =>
+所以猜想旋转矩阵 =>
 
 |cos(β) -sin(β)|
 |sin(β)  cos(β)|
 
 验证下 =>
 
-|cos(β) -sin(β)|   |x|
-|sin(β)  cos(β)| * |y|
+|x`|   |cos(β) -sin(β)|   |x|
+|y`| = |sin(β)  cos(β)| * |y|
 
 x` = cos(β)x - sin(β)y
 y` = sin(β)x + cos(β)y
@@ -299,8 +312,12 @@ y` = sin(β)x + cos(β)y
                     <p>3、位移：transform: translate(100,50)</p>
                     <pre>
                         <code class="hljs" data-trim contenteditable>
-x` = x + tx = 1*x + 0*y + tx*1
-y` = y + ty = 0*x + 1*y + ty*1
+x` = x + tx
+y` = y + ty
+
+
+x` = 1*x + 0*y + tx*1
+y` = 0*x + 1*y + ty*1
 
 
 
@@ -313,15 +330,16 @@ y` = y + ty = 0*x + 1*y + ty*1
 
 所以可得 =>
 
+|1  0  tx|
+|0  1  ty|
+|0  0   1|
 
 
+验证下 =>
 
-
-
-
-|1  0  tx|   |x|
-|0  1  ty| * |y|
-|0  0   1|   |1|
+|x`|   |1  0  tx|   |x|
+|y`| = |0  1  ty| * |y|
+|w`| = |0  0   1|   |1|
 
 x` = 1*x + tx*1
 y` = 1*y + ty*1
@@ -338,25 +356,43 @@ w` = 1*1
                     <img width="280" height="160" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulery.png">
                     </p>
                 </section>
+                <section>
+                    <h2>欧拉角怎么变成矩阵</h2>
+                    <pre>
+                        <code class="hljs" data-trim contenteditable>
+
+                        </code>
+                    </pre>
+                </section>
             </section>
             <section>
                 <section>
-                    <h2>有点懵逼了...</h2>
+                    <h2>有一点懵逼了...</h2>
                     <p>what the hell ~~</p>
                     <p>
                         <img width="320" height="240" data-src="http://jasonchen-test.oss-cn-shanghai.aliyuncs.com/aaaa.jpg">
                     </p>
                 </section>
+                <section>
+                    <h2>莫慌</h2>
+                    <p>来个简单的demo压压惊</p>
+                    <iframe height='260' scrolling='no' src='//codepen.io/JasonChen1982/embed/preview/bZJBYB/?height=320&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/bZJBYB/'>bZJBYB</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                </section>
             </section>
             <section>
-                <h2>知道矩阵又能做什么呢？</h2>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/butterfly/">欧拉角旋转、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsClouds/">高阶bezier、四元数、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/sphere/">空间几何、欧拉角、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webAudio/music/">快速傅立叶变换、音频解析</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/">空间几何、高等数学、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/pentagram/">欧拉角、矩阵</a></p>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/simplexNoise/">成型一点的</a></p>
+                <section>
+                    <h2>知道矩阵又能做什么呢？</h2>
+                </section>
+                <section>
+                    <h2>你可以玩转WebGL啊~~</h2>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webAudio/music/">快速傅立叶变换、音频解析</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/">空间几何、高等数学、矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/sphere/">空间几何、欧拉角、矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/pentagram/">欧拉角、矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/butterfly/">欧拉角旋转、矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsClouds/">高阶bezier、四元数、矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/simplexNoise/">成型一点的</a></p>
+                </section>
             </section>
             <section>
                 <section>
@@ -375,14 +411,7 @@ w` = 1*1
                     </p>
                 </section>
                 <section>
-                    <h2>开始一个简单的</h2>
-                    <p>来个demo压压惊</p>
-                    <iframe height='260' scrolling='no' src='//codepen.io/JasonChen1982/embed/preview/bZJBYB/?height=320&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/bZJBYB/'>bZJBYB</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <h2>代码好长、好麻烦～～</h2>
+                    <h2>demo代码好长、好麻烦～～</h2>
                     <p>懒ai末期？？</p>
                 </section>
                 <section>
@@ -400,7 +429,7 @@ w` = 1*1
                 </section>
             </section>
             <section>
-                <h2>谈谈VR、AR</h2>
+                <h2>最后谈谈VR、AR</h2>
             </section>
             <section>
                 <section>
@@ -408,7 +437,7 @@ w` = 1*1
                 </section>
                 <section>
                     <h2>web端如何实现VR视觉</h2>
-                    <p>先上原理：干啥都得先懂原理</p>
+                    <p>先上原理：干啥都得先搞懂原理</p>
                 </section>
                 <section>
                     <h2>上demo</h2>
