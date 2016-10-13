@@ -228,7 +228,7 @@ w` = m20*x + m21*y + m22*w
 |0  1  0|
 |0  0  1|
 
-乘以待变化的坐标(x,y,w) =>
+乘以待变化的坐标(x,y,w)  探索单位矩阵的几何意义 =>
 
 |x`|   |1  0  0|   |x|
 |y`| = |0  1  0| * |y|
@@ -359,11 +359,7 @@ w` = 1*1
                         <span style="vertical-align:middle;color: red;font-size:50px;">*</span>
                         <img width="280" height="160" style="background-color: #fff;vertical-align:middle;" data-src="./imgs/eulery.png">
                     </p>
-                    <pre>
-                        <code class="hljs" data-trim contenteditable>
-
-                        </code>
-                    </pre>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://codepen.io/JasonChen1982/pen/kkELNm">示例demo</a></p>
                 </section>
             </section>
             <section>
@@ -385,7 +381,7 @@ w` = 1*1
                     <h2>知道矩阵又能做什么呢？</h2>
                 </section>
                 <section>
-                    <h2>你可以玩转WebGL啊~~</h2>
+                    <h2>例如可以玩转WebGL啊~~</h2>
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webAudio/music/">快速傅立叶变换、音频解析</a></p>
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/">空间几何、高等数学、矩阵</a></p>
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/sphere/">空间几何、欧拉角、矩阵</a></p>
@@ -463,43 +459,38 @@ w` = 1*1
             </section>
             <section>
                 <section>
-                    <h2>最后谈谈如何正确的选择技术方案</h2>
+                    <h2>最后谈谈如何为项目选择合适的技术方案</h2>
+                    <p>或者说怎么实现更好性能的动画</p>
                 </section>
                 <section>
-                    <h2>特点和优缺点</h2>
+                    <h2>一些建议</h2>
                     <table>
                         <thead>
                             <tr>
                                 <th>方案</th>
-                                <th>优势</th>
-                                <th>缺点</th>
-                                <th>性能</th>
+                                <th>使用建议</th>
                             </tr>
                         </thead>
                         <tbody style="font-size:28px;">
                             <tr>
                                 <td>CSS3</td>
-                                <td>简单、支持广</td>
-                                <td>渲染能力弱，局限大</td>
-                                <td>费劲</td>
+                                <td>适合运动简单的、运动的物体少的</td>
                             </tr>
                             <tr>
                                 <td>SVG</td>
-                                <td>矢量、线条</td>
-                                <td>兼容性一般</td>
-                                <td>性能一般</td>
+                                <td>当动画的元素都是一些几何形状的时候，物体数量在20个以下的时候</td>
                             </tr>
                             <tr>
                                 <td>canvas</td>
-                                <td>点线面全能</td>
-                                <td>依赖GPU</td>
-                                <td>性能较好</td>
+                                <td>当上面两种情况不适用的时候</td>
+                            </tr>
+                            <tr>
+                                <td>webgl 2d</td>
+                                <td>有大量的同层级的物体渲染的时候，可以使用batch技术实现打包渲染</td>
                             </tr>
                             <tr>
                                 <td>webgl</td>
-                                <td>十项全能</td>
-                                <td>重度依赖GPU</td>
-                                <td>非常好</td>
+                                <td>有大量的三维效果</td>
                             </tr>
                             <!-- <tr>
                                 <td>webAudio</td>
