@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>听说组织者会发大红包</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="lib/css/myself.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h2 id="title">带上矩阵，做一些很美的事</h2>
+            </section>
+            <section>
+                <h2 id="title"><img width="100" style="border-radius: 50%;" src="./imgs/header.jpg"></h2>
+                <div style="width: 640px; margin: 0 auto; text-align: left;">
+                    <p class="dot-left">陈剑鑫 → jasonChen → JC</p>
+                    <p class="dot-left">UC RED d4工作室 前端开发工程师</p>
+                    <p class="dot-left">国际 活动营销</p>
+                    <p class="dot-left">沉迷于编程动画、WebGL等图形技术</p>
+                </div>
+            </section>
+            <section>
+                <section>
+                    <h2 id="title">分享什么</h2>
+                    <p style="font-size: 24px;line-height: 40px;">想和大家叨叨的一些内容</p>
+                </section>
+                <section>
+                    <div style="width: 480px; margin: 0 auto; text-align: left;">
+                        <p class="dot-left">常见的动画与矩阵的关系</p>
+                        <p class="dot-left">矩阵几何意义，手撕demo</p>
+                        <p class="dot-left">谈谈AR，demo实现</p>
+                        <p class="dot-left">谈谈VR，demo体验</p>
+                        <p class="dot-left">移动端性能优化建议</p>
+                        <p class="dot-left">Q&A</p>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>矩阵有什么用</h2>
+                </section>
+                <section data-background-video="./video/screen1.mov" data-background-color="#000000"></section>
+                <section data-background-video="./video/screen2.mov" data-background-color="#000000"></section>
+                <section data-background-video="./video/screen3.mov" data-background-color="#000000"></section>
+            </section>
+            <section>
+                <h2>矩阵</h2>
+            </section>
+            <section>
+                <section>
+                    <h2>CSS3<span style="text-transform:lowercase;"> transform </span>与矩阵的关系</h2>
+                </section>
+                <section>
+                    <h2>常见的CSS3动画</h2>
+                    <div id="animate_translate">
+                        <span>位移动画</span>
+                        <div></div>
+                    </div>
+                    <div id="animate_rotate">
+                        <span>旋转动画</span>
+                        <div></div>
+                    </div>
+                    <div id="animate_scale">
+                        <span>缩放动画</span>
+                        <div></div>
+                    </div>
+                    <div id="animate_skew">
+                        <span>斜切动画</span>
+                        <div></div>
+                    </div>
+                </section>
+                <section>
+                    <h2>CSS3 带来的三维</h2>
+                    <div id="animate_rotate_3d">
+                        <span>rotateX|Y|Z <span style="color: #cf009b;"> 和 </span> rotate3d</span>
+                        <div id="view_box_3d">
+                            <div id="cube_box_3d">
+                                <span class="face_normal face_front"></span>
+                                <span class="face_normal face_back"></span>
+                                <span class="face_normal face_left"></span>
+                                <span class="face_normal face_right"></span>
+                                <span class="face_normal face_top"></span>
+                                <span class="face_normal face_bottom"></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>canvas 2d api</h2>
+                    <p style="font-size: 24px;line-height: 40px;">2d的绘图环境、形状、文字、位图</p>
+                    <iframe data-src="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle/" width="700" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+                </section>
+                <section>
+                    <h2>由此可见矩阵在现代浏览器中起着至关重要的作用</h2>
+                    <p>上面那些对物体的各种变换都是利用矩阵来实现的</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h3>矩阵是什么</h3>
+                    <p style="font-size: 24px;line-height: 40px;">线性代数、多项式方程组</p>
+                    <p style="font-size: 24px;line-height: 40px;">几何意义：描述几何空间的仿射变换</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+|m00  m01  m02  m03|
+|m10  m11  m12  m13|
+|m20  m21  m22  m23|
+|m30  m31  m32  m33|
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>矩阵乘法</h3>
+                    <pre><code class="hljs" data-trim contenteditable>
+| x` |   |m00  m01  m02  m03|   | x |
+| y` | = |m10  m11  m12  m13| * | y |
+| z` |   |m20  m21  m22  m23|   | z |
+| w` |   |m30  m31  m32  m33|   | w |
+
+
+x` = m00*x + m01*y + m02*z + m03*w
+
+y` = m10*x + m11*y + m12*z + m13*w
+
+z` = m20*x + m21*y + m22*z + m23*w
+
+w` = m30*x + m31*y + m32*z + m33*w
+
+                    </code></pre>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>矩阵几何意义</h2>
+                </section>
+                <section>
+                    <h3>单位矩阵</h3>
+                    <pre><code class="hljs" data-trim contenteditable>
+定理
+|1  0  0  0|
+|0  1  0  0|
+|0  0  1  0|
+|0  0  0  1|
+
+乘以待变化的坐标(x,y,z,w)  探索单位矩阵的几何意义 =>
+
+|x`|   |1  0  0  0|   |x|
+|y`| = |0  1  0  0| * |y|
+|z`|   |0  0  1  0|   |z|
+|w`|   |0  0  0  1|   |w|
+
+
+x` = 1*x + 0*y + 0*z + 0*w = x
+y` = 0*x + 1*y + 0*z + 0*w = y
+z` = 0*x + 0*y + 1*z + 0*w = z
+w` = 0*x + 0*y + 0*z + 1*w = w
+
+                    </code></pre>
+                </section>
+                <section>
+                    <p>各种变换矩阵</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+位移矩阵          缩放矩阵          X轴旋转矩阵
+|1  0  0  tx|   |sx  0   0  0|   |1   0     0    0|
+|0  1  0  ty|   |0   sy  0  0|   |0  cosβ  sinβ  0|
+|0  0  1  tz|   |0   0   sz 0|   |0 -sinβ  cosβ  0|
+|0  0  0   1|   |0   0   0  1|   |0   0     0    1|
+
+
+Y轴旋转矩阵             Z轴旋转矩阵
+|cosβ   0   sinβ  0|   |cosβ  -sinβ  0  0|
+|  0    1    0    0|   |sinβ  cosβ   0  0|
+|-sinβ  0   cosβ  0|   |  0    0     1  0|
+|  0    0    0    1|   |  0    0     0  1|
+
+                    </code></pre>
+                </section>
+                <section>
+                    <p>旋转功能 rotateZ(βdeg) 矩阵推导</p>
+                    <p><img width="480" height="480" style="border: 0;" data-src="./imgs/rotate.png"></p>
+                </section>
+                <section>
+                    <pre><code class="hljs" data-trim contenteditable>
+r = √(x^2+y^2)
+
+// 单位圆得到等式
+x` = cos(β+α) * r
+y` = sin(β+α) * r
+
+// 和差化积公式
+sin(β+α) = sin(β)cos(α) + cos(β)sin(α)
+cos(β+α) = cos(β)cos(α) - sin(β)sin(α)
+
+cos(α) = x/r
+sin(α) = y/r
+
+// 愉快的代入
+x` = (cos(β)x/r - sin(β)y/r) * r = cos(β)x - sin(β)y
+y` = (sin(β)x/r + cos(β)y/r) * r = sin(β)x + cos(β)y
+
+所以猜想旋转矩阵 =>
+
+|cos(β) -sin(β)|
+|sin(β)  cos(β)|
+
+验证下 =>
+
+|x`|   |cos(β) -sin(β)|   |x|
+|y`| = |sin(β)  cos(β)| * |y|
+
+x` = cos(β)x - sin(β)y
+y` = sin(β)x + cos(β)y
+
+                    </code></pre>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>配合WebGL原生api来用这些矩阵</h2>
+                </section>
+                <section>
+                    <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points">位移矩阵</a></p>
+                    <pre><code class="hljs" data-trim contenteditable>
+位移矩阵
+|1  0  0  tx|
+|0  1  0  ty|
+|0  0  1  tz|
+|0  0  0   1|
+                    </code></pre>
+                    <iframe height='320' scrolling='no' title='webgl-translate' src='http://codepen.io/JasonChen1982/embed/preview/Kgjxeg/?height=320&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/Kgjxeg/'>webgl-translate</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                </section>
+                <section>
+                    <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points3">旋转矩阵</a></p>
+                    <pre><code class="hljs" data-trim contenteditable>
+X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
+|1   0     0    0|   |cosβ   0   sinβ  0|   |cosβ  -sinβ  0  0|
+|0  cosβ  sinβ  0|   |  0    1    0    0|   |sinβ  cosβ   0  0|
+|0 -sinβ  cosβ  0|   |-sinβ  0   cosβ  0|   |  0    0     1  0|
+|0   0     0    1|   |  0    0    0    1|   |  0    0     0  1|
+                    </code></pre>
+                    <iframe height='320' scrolling='no' title='webgl-rotate' src='http://codepen.io/JasonChen1982/embed/preview/ZpdVxe/?height=320&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/ZpdVxe/'>webgl-rotate</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                </section>
+                <section>
+                    <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points4">旋转矩阵 * 位移矩阵</a></p>
+                    <pre><code class="hljs" data-trim contenteditable>
+位移矩阵          X轴旋转矩阵            Y轴旋转矩阵          
+|1  0  0  tx|   |1   0     0    0|   |cosβ   0   sinβ  0|
+|0  1  0  ty|   |0  cosβ  sinβ  0|   |  0    1    0    0|
+|0  0  1  tz|   |0 -sinβ  cosβ  0|   |-sinβ  0   cosβ  0|
+|0  0  0   1|   |0   0     0    1|   |  0    0    0    1|
+
+                    </code></pre>
+                    <iframe height='320' scrolling='no' title='mrZGzY' src='http://codepen.io/JasonChen1982/embed/preview/mrZGzY/?height=320&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/mrZGzY/'>mrZGzY</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                </section>
+                <section>
+                    <h2>来个简单又实用点的</h2>
+                    <p style="font-size: 24px;line-height: 40px;">4*4列矩阵配合canvas 2d完成三维效果</p>
+                    <iframe height='320' scrolling='no' src='//codepen.io/JasonChen1982/embed/preview/bZJBYB/?height=320&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/bZJBYB/'>bZJBYB</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>还想再看些demo？</h2>
+                </section>
+                <section>
+                    <h2>基于前面讲的基础知识点~~</h2>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/butterfly/">欧拉角旋转、矩阵、复杂一点的WebGL绘制</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/lineTorus/">高等数学、欧拉角旋转、矩阵、模拟光照</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsClouds/">高阶bezier曲线、四元数、各种矩阵</a></p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>AR技术实现</h2>
+                    <p style="font-size: 24px;line-height: 40px;">矩阵在AR上的的应用</p>
+                </section>
+                <section>
+                    <h2>AR是怎么实现的</h2>
+                    <p>讲讲原理</p>
+                </section>
+                <section>
+                    <h2>demo</h2>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webglAR/">WebGL从视频画面解算照相机参数</a></p>
+                </section>
+                <section>
+                    <h2>web端遇到的麻烦</h2>
+                    <p style="font-size: 30px;line-height: 40px;">浏览器对媒体硬件的支持、视频图像内容的实时读取</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>VR技术，以及VR视觉</h2>
+                    <p style="font-size: 24px;line-height: 40px;">矩阵在VR上的的应用</p>
+                </section>
+                <section>
+                    <h2>VR<span style="color: #cf009b;"> → </span>Web VR<span style="color: #cf009b;"> → </span>VR 视觉</h2>
+                </section>
+                <section>
+                    <h2>web端如何实现VR视觉</h2>
+                    <p>先上原理：干啥都得先懂原理</p>
+                </section>
+                <section>
+                    <h2>上demo</h2>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsCloudsVR/">用VR增强视觉的星空</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/flyCarVR/">赶出来的demo</a></p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>最后谈谈如何实现高性能动画</h2>
+                    <p>移动端动画开发需要注意什么</p>
+                </section>
+                <section>
+                    <h2>一些建议</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="100">方 案</th>
+                                <th>使用建议</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:28px;">
+                            <tr>
+                                <td>CSS3</td>
+                                <td>适合运动简单的、运动的物体少的，注意合成层的问题，为页面规划合理的合成层</td>
+                            </tr>
+                            <tr>
+                                <td>SVG</td>
+                                <td>当动画的元素都是一些几何形状、线条的时候，物体数量在20个以下的时候</td>
+                            </tr>
+                            <tr>
+                                <td>canvas</td>
+                                <td>当上面两种情况不适用的时候，动画比较复杂</td>
+                            </tr>
+                            <tr>
+                                <td>webgl 2d</td>
+                                <td>有大量的同层级的物体渲染的时候，可以使用batch技术实现打包渲染</td>
+                            </tr>
+                            <tr>
+                                <td>webgl</td>
+                                <td>有大量的三维效果</td>
+                            </tr>
+                            <!-- <tr>
+                                <td>webAudio</td>
+                                <td>音频处理能力</td>
+                                <td>依赖浏览器</td>
+                                <td><del style="color: #f00;">U3 U4</del></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <p><a target="_blank" href="http://codepen.io/sol0mka/full/ogOYJj/">线条动画</a></p>
+                    <p><a target="_blank" href="http://127.0.0.1:5050/webAudio/music/">快速傅立叶变换、音频解析</a></p>
+                </section>
+            </section>
+            <section>
+                <h1>Q&A</h1>
+            </section>
+            <section>
+                <h1>THE END</h1>
+                <h3>谢谢</h3>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>

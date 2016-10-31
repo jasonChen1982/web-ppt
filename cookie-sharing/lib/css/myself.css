@@ -132,7 +132,6 @@ to {-webkit-transform: scale(1);}
     position: absolute;
     width: 160px;
     height: 160px;
-    transform-style: preserve-3d;
 }
 #cube_box_3d .face_front {
     left: 0;
