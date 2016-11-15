@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
     <!-- 自定义样式 -->
     <link rel="stylesheet" href="lib/css/myself.css">
     <!-- Theme used for syntax highlighting of code -->
@@ -38,7 +38,7 @@
             <section>
                 <h2 id="title"><img width="100" style="border-radius: 50%;" src="./imgs/header.jpg"></h2>
                 <div style="width: 640px; margin: 0 auto; text-align: left;">
-                    <p class="dot-left">陈剑鑫 → jasonChen → JC</p>
+                    <p class="dot-left">陈剑鑫<span style="color: #13DAEC;"> → </span>jasonChen<span style="color: #13DAEC;"> → </span>JC</p>
                     <p class="dot-left">UC 前端开发工程师</p>
                     <p class="dot-left">活动营销</p>
                     <p class="dot-left">沉迷于编程动画、WebGL等图形技术</p>
@@ -64,9 +64,9 @@
                 <section>
                     <h2>矩阵有什么用</h2>
                 </section>
-                <section data-background-video="./video/screen1.mov" data-background-color="#000000"></section>
-                <section data-background-video="./video/screen2.mov" data-background-color="#000000"></section>
-                <section data-background-video="./video/screen3.mov" data-background-color="#000000"></section>
+                <section data-background-video="./video/screen1.mov" data-background-color="transparent"></section>
+                <section data-background-video="./video/screen2.mov" data-background-color="transparent"></section>
+                <section data-background-video="./video/screen3.mov" data-background-color="transparent"></section>
             </section>
             <section>
                 <h2>矩阵</h2>
@@ -97,7 +97,7 @@
                 <section>
                     <h2>CSS3 带来的三维</h2>
                     <div id="animate_rotate_3d">
-                        <span>rotateX|Y|Z <span style="color: #cf009b;"> 和 </span> rotate3d</span>
+                        <span>rotateX|Y|Z <span style="color: #13DAEC;"> 和 </span> rotate3d</span>
                         <div id="view_box_3d">
                             <div id="cube_box_3d">
                                 <span class="face_normal face_front"></span>
@@ -111,12 +111,21 @@
                     </div>
                 </section>
                 <section>
-                    <h2>canvas 2d api</h2>
-                    <p style="font-size: 24px;line-height: 40px;">2d的绘图环境、形状、文字、位图</p>
-                    <iframe data-src="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle/" width="700" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+                    <div style="position: absolute; top: 0; width: 100%;">
+                        <h2>svg动画</h2>
+                        <p style="font-size: 24px;line-height: 40px;">transform</p>
+                    </div>
+                    <iframe data-src="http://127.0.0.1:5050/svg/none/" width="700" height="450" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
                 </section>
                 <section>
-                    <h2>矩阵至关重要</h2>
+                    <div style="position: absolute; top: 0; width: 100%;">
+                        <h2>canvas 2d api</h2>
+                        <p style="font-size: 24px;line-height: 40px;">2d的绘图环境、形状、文字、位图</p>
+                    </div>
+                    <iframe data-src="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle/" width="700" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+                </section>
+                <section>
+                    <h2>矩阵很重要</h2>
                     <p>如上的各种变换都是利用矩阵来实现的</p>
                 </section>
             </section>
@@ -124,31 +133,25 @@
                 <section>
                     <h3>矩阵是什么</h3>
                     <p style="font-size: 24px;line-height: 40px;">几何意义：描述几何空间的仿射变换</p>
-                    <pre><code class="hljs" data-trim contenteditable>
+                    <div style="width: 300px; margin: 0 auto;">
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
 |m00  m01  m02  m03|
 |m10  m11  m12  m13|
 |m20  m21  m22  m23|
 |m30  m31  m32  m33|
                     </code></pre>
+                    </div>
                 </section>
                 <section>
                     <h3>矩阵乘法</h3>
+                    <div style="width: 500px; margin: 0 auto;">
                     <pre><code class="hljs" data-trim contenteditable>
 | x` |   |m00  m01  m02  m03|   | x |
 | y` | = |m10  m11  m12  m13| * | y |
 | z` |   |m20  m21  m22  m23|   | z |
 | w` |   |m30  m31  m32  m33|   | w |
-
-
-x` = m00*x + m01*y + m02*z + m03*w
-
-y` = m10*x + m11*y + m12*z + m13*w
-
-z` = m20*x + m21*y + m22*z + m23*w
-
-w` = m30*x + m31*y + m32*z + m33*w
-
                     </code></pre>
+                    </div>
                 </section>
             </section>
             <section>
@@ -157,31 +160,19 @@ w` = m30*x + m31*y + m32*z + m33*w
                 </section>
                 <section>
                     <h3>单位矩阵</h3>
-                    <pre><code class="hljs" data-trim contenteditable>
-定理
+                    <div style="width: 300px; margin: 0 auto;">
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
 |1  0  0  0|
 |0  1  0  0|
 |0  0  1  0|
 |0  0  0  1|
-
-乘以待变化的坐标(x,y,z,w)  探索单位矩阵的几何意义 =>
-
-|x`|   |1  0  0  0|   |x|
-|y`| = |0  1  0  0| * |y|
-|z`|   |0  0  1  0|   |z|
-|w`|   |0  0  0  1|   |w|
-
-
-x` = 1*x + 0*y + 0*z + 0*w = x
-y` = 0*x + 1*y + 0*z + 0*w = y
-z` = 0*x + 0*y + 1*z + 0*w = z
-w` = 0*x + 0*y + 0*z + 1*w = w
-
                     </code></pre>
+                    </div>
                 </section>
                 <section>
                     <p>各种变换矩阵</p>
-                    <pre><code class="hljs" data-trim contenteditable>
+                    <div style="width: 700px; margin: 0 auto;">
+                    <pre><code class="hljs" data-trim contenteditable style="text-align: center;">
 位移矩阵          缩放矩阵          X轴旋转矩阵
 |1  0  0  tx|   |sx  0   0  0|   |1   0     0    0|
 |0  1  0  ty|   |0   sy  0  0|   |0  cosβ  sinβ  0|
@@ -196,13 +187,14 @@ Y轴旋转矩阵             Z轴旋转矩阵
 |  0    0    0    1|   |  0    0     0  1|
 
                     </code></pre>
+                    </div>
                 </section>
                 <section>
-                    <p>旋转功能 rotateZ(βdeg) 矩阵推导</p>
+                    <p>rotateZ(βdeg) 矩阵推导</p>
                     <p><img width="480" height="480" style="border: 0;" data-src="./imgs/rotate.png"></p>
                 </section>
                 <section>
-                    <pre><code class="hljs" data-trim contenteditable>
+                    <pre><code class="hljs" contenteditable>
 r = √(x^2+y^2)
 
 // 单位圆得到等式
@@ -238,22 +230,24 @@ y` = sin(β)x + cos(β)y
             </section>
             <section>
                 <section>
-                    <h2>配合WebGL原生api来用这些矩阵</h2>
+                    <h2>WebGL原生api<span style="color: #13DAEC;"> + </span>矩阵</h2>
                 </section>
                 <section>
                     <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points">位移矩阵</a></p>
-                    <pre><code class="hljs" data-trim contenteditable>
+                    <div style="width: 300px; margin: 0 auto;">
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
 位移矩阵
 |1  0  0  tx|
 |0  1  0  ty|
 |0  0  1  tz|
 |0  0  0   1|
                     </code></pre>
+                    </div>
                     <iframe height='320' scrolling='no' title='webgl-translate' src='http://codepen.io/JasonChen1982/embed/preview/Kgjxeg/?height=320&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/Kgjxeg/'>webgl-translate</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
                 </section>
                 <section>
                     <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points3">旋转矩阵</a></p>
-                    <pre><code class="hljs" data-trim contenteditable>
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
 X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
 |1   0     0    0|   |cosβ   0   sinβ  0|   |cosβ  -sinβ  0  0|
 |0  cosβ  sinβ  0|   |  0    1    0    0|   |sinβ  cosβ   0  0|
@@ -264,19 +258,18 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
                 </section>
                 <section>
                     <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points4">旋转矩阵 * 位移矩阵</a></p>
-                    <pre><code class="hljs" data-trim contenteditable>
-位移矩阵          X轴旋转矩阵            Y轴旋转矩阵          
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
+位移矩阵          X轴旋转矩阵           Y轴旋转矩阵          
 |1  0  0  tx|   |1   0     0    0|   |cosβ   0   sinβ  0|
 |0  1  0  ty|   |0  cosβ  sinβ  0|   |  0    1    0    0|
 |0  0  1  tz|   |0 -sinβ  cosβ  0|   |-sinβ  0   cosβ  0|
 |0  0  0   1|   |0   0     0    1|   |  0    0    0    1|
-
                     </code></pre>
                     <iframe height='320' scrolling='no' title='mrZGzY' src='http://codepen.io/JasonChen1982/embed/preview/mrZGzY/?height=320&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/mrZGzY/'>mrZGzY</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
                 </section>
                 <section>
-                    <h2>来个简单又实用点的</h2>
-                    <p style="font-size: 24px;line-height: 40px;">4*4列矩阵配合canvas 2d完成三维效果</p>
+                    <h2>实用点～</h2>
+                    <p style="font-size: 20px;line-height: 40px;">4*4列矩阵<span style="color: #13DAEC;"> + </span>canvas 2d完成三维效果</p>
                     <iframe height='320' scrolling='no' src='//codepen.io/JasonChen1982/embed/preview/bZJBYB/?height=320&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/bZJBYB/'>bZJBYB</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
                 </section>
             </section>
@@ -285,10 +278,10 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
                     <h2>更复杂一点的demo</h2>
                 </section>
                 <section>
-                    <h2>基于前面讲的基础知识点~~</h2>
-                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/butterfly/">欧拉角旋转、矩阵、复杂一点的WebGL绘制</a></p>
-                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/lineTorus/">高等数学、欧拉角旋转、矩阵、模拟光照</a></p>
-                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsClouds/">高阶bezier曲线、四元数、各种矩阵</a></p>
+                    <h2>加上其它知识点～</h2>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/lineTorus/">高等数学、欧拉角、逆矩阵、光照计算模型</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/butterfly/">欧拉角、矩阵、WebGL其它绘制api</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsClouds/">高阶bezier、四元数、各种矩阵</a></p>
                 </section>
             </section>
             <section>
@@ -297,34 +290,26 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
                     <p style="font-size: 24px;line-height: 40px;">矩阵在AR上的的应用</p>
                 </section>
                 <section>
-                    <h2>AR是怎么实现的</h2>
-                    <p>讲讲原理</p>
-                </section>
-                <section>
                     <h2>demo</h2>
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webglAR/">WebGL从视频画面解算照相机参数</a></p>
                 </section>
                 <section>
                     <h2>web端遇到的麻烦</h2>
-                    <p style="font-size: 30px;line-height: 40px;">浏览器对媒体硬件的支持、视频图像内容的实时读取</p>
+                    <p style="font-size: 30px;line-height: 40px;">媒体硬件支持、视频图像内容的实时读取</p>
                 </section>
             </section>
             <section>
                 <section>
-                    <h2>VR技术，以及VR视觉</h2>
+                    <h2>VR技术</h2>
                     <p style="font-size: 24px;line-height: 40px;">矩阵在VR上的的应用</p>
                 </section>
                 <section>
-                    <h2>VR<span style="color: #cf009b;"> → </span>Web VR<span style="color: #cf009b;"> → </span>VR 视觉</h2>
-                </section>
-                <section>
-                    <h2>web端如何实现VR视觉</h2>
-                    <p>先上原理：干啥都得先懂原理</p>
+                    <h2>VR<span style="color: #13DAEC;"> → </span>Web VR<span style="color: #13DAEC;"> → </span>VR 视觉</h2>
                 </section>
                 <section>
                     <h2>demo</h2>
-                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsCloudsVR/">用VR增强视觉的星空</a></p>
-                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/flyCarVR/">赶出来的demo</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsCloudsVR/">VR版星空</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/flyCarVR/">开车时间</a></p>
                 </section>
             </section>
             <!-- <section>
@@ -381,7 +366,6 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
             </section>
             <section>
                 <h1>THE END</h1>
-                <h3>谢谢</h3>
             </section>
         </div>
     </div>
@@ -395,7 +379,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
         history: true,
         center: true,
 
-        transition: 'convex', // none/fade/slide/convex/concave/zoom
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
 
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [{
