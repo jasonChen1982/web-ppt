@@ -165,6 +165,11 @@
                     <h3>不符合交换律</h3>
                     <div id="matrix-mult">
                         <div id="t-r">
+                            <pre style="margin-left: 0;margin-right: 0;width: 100%;"><code id="style-special1" class="hljs" data-trim contenteditable>
+.anime {
+transform:rotate(1turn) translateX(90px);
+}
+                            </code></pre>
                             <p>rotate<span style="color: #13DAEC;"> * </span>translate</p>
                             <div>
                                 <i></i>
@@ -172,6 +177,11 @@
                             </div>
                         </div>
                         <div id="r-t">
+                            <pre style="margin-left: 0;margin-right: 0;width: 100%;"><code id="style-special2" class="hljs" data-trim contenteditable>
+.anime {
+transform:translateX(90px) rotate(1turn);
+}
+                            </code></pre>
                             <p>translate<span style="color: #13DAEC;"> * </span>rotate</p>
                             <div>
                                 <i></i>
@@ -238,16 +248,19 @@ Y轴旋转矩阵             Z轴旋转矩阵
                 </section>
                 <section>
                     <pre><code style="max-height: 600px;" class="hljs" contenteditable>
-r = √(x^2+y^2)
 
 // 单位圆得到等式
 x` = cos(β+α) * r
 y` = sin(β+α) * r
 
+// 已知
+r = √(x^2+y^2)
+
 // 和差化积公式
 sin(β+α) = sin(β)cos(α) + cos(β)sin(α)
 cos(β+α) = cos(β)cos(α) - sin(β)sin(α)
 
+// 正弦余弦定义
 cos(α) = x/r
 sin(α) = y/r
 
@@ -255,12 +268,12 @@ sin(α) = y/r
 x` = (cos(β)x/r - sin(β)y/r) * r = cos(β)x - sin(β)y
 y` = (sin(β)x/r + cos(β)y/r) * r = sin(β)x + cos(β)y
 
-所以猜想旋转矩阵 =>
+// 所以猜想旋转矩阵 =>
 
 |cos(β) -sin(β)|
 |sin(β)  cos(β)|
 
-验证下 =>
+// 验证下 =>
 
 |x`|   |cos(β) -sin(β)|   |x|
 |y`| = |sin(β)  cos(β)| * |y|
@@ -301,7 +314,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
                 <section>
                     <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points4">旋转矩阵 * 位移矩阵</a></p>
                     <pre><code class="hljs" contenteditable style="text-align: center;">
-位移矩阵           X轴旋转矩阵             Y轴旋转矩阵
+位移矩阵          X轴旋转矩阵             Y轴旋转矩阵
 |1  0  0  tx|   |1   0     0    0|   |cosβ   0   sinβ  0|
 |0  1  0  ty|   |0  cosβ  sinβ  0|   |  0    1    0    0|
 |0  0  1  tz|   |0 -sinβ  cosβ  0|   |-sinβ  0   cosβ  0|
@@ -330,7 +343,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
             <section>
                 <section>
                     <h2>AR技术实现</h2>
-                    <p style="font-size: 24px;line-height: 40px;">矩阵在AR上的的应用</p>
+                    <p style="font-size: 24px;line-height: 40px;">矩阵在AR上的应用</p>
                 </section>
                 <section>
                     <h2>demo</h2>
@@ -344,7 +357,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
             <section>
                 <section>
                     <h2>VR技术</h2>
-                    <p style="font-size: 24px;line-height: 40px;">矩阵在VR上的的应用</p>
+                    <p style="font-size: 24px;line-height: 40px;">矩阵在VR上的应用</p>
                 </section>
                 <section>
                     <h2>VR<span style="color: #13DAEC;"> → </span>Web VR<span style="color: #13DAEC;"> → </span>VR 视觉</h2>

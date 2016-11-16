@@ -207,19 +207,19 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
 
 #matrix-mult {
     position: relative;
-    height: 400px;
+    height: 440px;
 }
 #t-r {
     position: absolute;
     left: 0;
-    width: 46%;
-    height: 400px;
+    width: 49%;
+    height: 440px;
 }
 #r-t {
     position: absolute;
     right: 0;
-    width: 46%;
-    height: 400px;
+    width: 49%;
+    height: 440px;
 }
 #t-r div, #r-t div {
     position: absolute;
@@ -292,8 +292,8 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
     to {transform: rotate(360deg) translate(100px, 0);}
 }
 @-webkit-keyframes ani_t_r {
-    from {-webkit-transform: translate(100px, 0) rotate(0);}
-    to {-webkit-transform: translate(100px, 0) rotate(360deg);}
+    from {-webkit-transform: rotate(0) translate(100px, 0);}
+    to {-webkit-transform: rotate(360deg) translate(100px, 0);}
 }
 
 @keyframes ani_r_t {
@@ -509,4 +509,6 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
     to {-webkit-transform: rotate(-130deg);}
 }
 
-
+#style-special1 span,#style-special2 span {
+    font-size: 18px;
+}

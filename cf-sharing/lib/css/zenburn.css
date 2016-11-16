@@ -10,7 +10,7 @@ based on dark.css by Ivan Sagalaev
   overflow-x: auto;
   padding: 0.5em;
   background: #3f3f3f;
-  color: #dcdcdc;
+  color: #9ad434;
 }
 
 .hljs-keyword,
@@ -60,14 +60,14 @@ based on dark.css by Ivan Sagalaev
 .hljs-string,
 .hljs-built_in,
 .hljs-builtin-name {
-  color: #cc9393;
+  color: #ea3665;
 }
 
 .hljs-addition,
 .hljs-comment,
 .hljs-quote,
 .hljs-meta {
-  color: #7f9f7f;
+  color: #d4921a;
 }
 
 
