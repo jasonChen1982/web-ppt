@@ -37,11 +37,11 @@
             </section>
             <section>
                 <h2 id="title"><img width="100" style="border-radius: 50%;" src="./imgs/header.jpg"></h2>
-                <div style="width: 640px; margin: 0 auto; text-align: left;">
+                <div style="width: 460px; margin: 0 auto; text-align: left;">
                     <p class="dot-left">陈剑鑫<span style="color: #13DAEC;"> → </span>jasonChen<span style="color: #13DAEC;"> → </span>JC</p>
                     <p class="dot-left">UC 前端开发工程师</p>
                     <p class="dot-left">活动营销</p>
-                    <p class="dot-left">沉迷于编程动画、WebGL等图形技术</p>
+                    <p class="dot-left">编程动画、WebGL</p>
                 </div>
             </section>
             <!-- <section>
@@ -62,7 +62,7 @@
             </section> -->
             <section>
                 <section>
-                    <h2>矩阵有什么用</h2>
+                    <h2>感受下矩阵</h2>
                 </section>
                 <section data-background-video="./video/screen1.mov" data-background-color="transparent"></section>
                 <section data-background-video="./video/screen2.mov" data-background-color="transparent"></section>
@@ -118,7 +118,7 @@
                     <iframe data-src="http://127.0.0.1:5050/svg/none/" width="700" height="450" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
                 </section>
                 <section>
-                    <div style="position: absolute; top: 0; width: 100%;">
+                    <div style="position: absolute; top: 60px; width: 100%;">
                         <h2>canvas 2d api</h2>
                         <p style="font-size: 24px;line-height: 40px;">2d的绘图环境、形状、文字、位图</p>
                     </div>
@@ -132,8 +132,7 @@
             <section>
                 <section>
                     <h3>矩阵是什么</h3>
-                    <p style="font-size: 24px;line-height: 40px;">几何意义：描述几何空间的仿射变换</p>
-                    <div style="width: 300px; margin: 0 auto;">
+                    <div style="width: 300px; margin: 0 auto;" class="fragment fade-up" data-fragment-index="0">
                     <pre><code class="hljs" contenteditable style="text-align: center;">
 |m00  m01  m02  m03|
 |m10  m11  m12  m13|
@@ -141,20 +140,51 @@
 |m30  m31  m32  m33|
                     </code></pre>
                     </div>
+                    <p style="font-size: 24px;line-height: 40px;" class="fragment fade-up" data-fragment-index="1">几何意义：描述几何空间的仿射变换</p>
                 </section>
                 <section>
                     <h3>矩阵乘法</h3>
                     <div style="width: 500px; margin: 0 auto;">
-                    <pre><code class="hljs" data-trim contenteditable>
+                    <pre><code class="hljs" contenteditable>
 | x` |   |m00  m01  m02  m03|   | x |
 | y` | = |m10  m11  m12  m13| * | y |
 | z` |   |m20  m21  m22  m23|   | z |
 | w` |   |m30  m31  m32  m33|   | w |
                     </code></pre>
                     </div>
+                    <div style="width: 640px; margin: 0 auto;">
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
+|m00  m01  m02  m03|   |n00  n01  n02  n03|
+|m10  m11  m12  m13| * |n10  n11  n12  n13|
+|m20  m21  m22  m23|   |n20  n21  n22  n23|
+|m30  m31  m32  m33|   |n30  n31  n32  n33|
+                    </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h3>不符合交换律</h3>
+                    <div id="matrix-mult">
+                        <div id="t-r">
+                            <p>rotate<span style="color: #13DAEC;"> * </span>translate</p>
+                            <div>
+                                <i></i>
+                                <b></b>
+                            </div>
+                        </div>
+                        <div id="r-t">
+                            <p>translate<span style="color: #13DAEC;"> * </span>rotate</p>
+                            <div>
+                                <i></i>
+                                <b></b>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </section>
             <section>
+                <section>
+                    <h2>价值</h2>
+                </section>
                 <section>
                     <h2>矩阵几何意义</h2>
                 </section>
@@ -185,7 +215,6 @@ Y轴旋转矩阵             Z轴旋转矩阵
 |  0    1    0    0|   |sinβ  cosβ   0  0|
 |-sinβ  0   cosβ  0|   |  0    0     1  0|
 |  0    0    0    1|   |  0    0     0  1|
-
                     </code></pre>
                     </div>
                 </section>
@@ -194,7 +223,7 @@ Y轴旋转矩阵             Z轴旋转矩阵
                     <p><img width="480" height="480" style="border: 0;" data-src="./imgs/rotate.png"></p>
                 </section>
                 <section>
-                    <pre><code class="hljs" contenteditable>
+                    <pre><code style="max-height: 600px;" class="hljs" contenteditable>
 r = √(x^2+y^2)
 
 // 单位圆得到等式
@@ -236,7 +265,6 @@ y` = sin(β)x + cos(β)y
                     <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points">位移矩阵</a></p>
                     <div style="width: 300px; margin: 0 auto;">
                     <pre><code class="hljs" contenteditable style="text-align: center;">
-位移矩阵
 |1  0  0  tx|
 |0  1  0  ty|
 |0  0  1  tz|
@@ -259,7 +287,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
                 <section>
                     <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points4">旋转矩阵 * 位移矩阵</a></p>
                     <pre><code class="hljs" contenteditable style="text-align: center;">
-位移矩阵          X轴旋转矩阵           Y轴旋转矩阵          
+位移矩阵           X轴旋转矩阵             Y轴旋转矩阵
 |1  0  0  tx|   |1   0     0    0|   |cosβ   0   sinβ  0|
 |0  1  0  ty|   |0  cosβ  sinβ  0|   |  0    1    0    0|
 |0  0  1  tz|   |0 -sinβ  cosβ  0|   |-sinβ  0   cosβ  0|
@@ -282,6 +310,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/canvas/lineTorus/">高等数学、欧拉角、逆矩阵、光照计算模型</a></p>
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/butterfly/">欧拉角、矩阵、WebGL其它绘制api</a></p>
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsClouds/">高阶bezier、四元数、各种矩阵</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:9000/russiaolympics/index?uc_param_str=dsdnfrpfbivesscpgimibtbmnisieijblauputogpintnw">运用到项目上</a></p>
                 </section>
             </section>
             <section>
@@ -291,7 +320,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
                 </section>
                 <section>
                     <h2>demo</h2>
-                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webglAR/">WebGL从视频画面解算照相机参数</a></p>
+                    <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webglAR/">从视频解算照相机参数</a></p>
                 </section>
                 <section>
                     <h2>web端遇到的麻烦</h2>
