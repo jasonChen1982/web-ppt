@@ -97,7 +97,6 @@
                 <section>
                     <h2>CSS3 带来的三维</h2>
                     <div id="animate_rotate_3d">
-                        <span>rotateX|Y|Z <span style="color: #13DAEC;"> 和 </span> rotate3d</span>
                         <div id="view_box_3d">
                             <div id="cube_box_3d">
                                 <span class="face_normal face_front"></span>
@@ -109,6 +108,10 @@
                             </div>
                         </div>
                     </div>
+                </section>
+                <section>
+                    <h2>描述旋转</h2>
+                    <span>rotateX|Y|Z <span style="color: #13DAEC;"> 和 </span> rotate3d</span>
                 </section>
                 <section>
                     <div style="position: absolute; top: 0; width: 100%;">
@@ -144,7 +147,7 @@
                 </section>
                 <section>
                     <h3>矩阵乘法</h3>
-                    <div style="width: 500px; margin: 0 auto;">
+                    <div style="width: 500px; margin: 0 auto;" class="fragment fade-up">
                     <pre><code class="hljs" contenteditable>
 | x` |   |m00  m01  m02  m03|   | x |
 | y` | = |m10  m11  m12  m13| * | y |
@@ -152,7 +155,7 @@
 | w` |   |m30  m31  m32  m33|   | w |
                     </code></pre>
                     </div>
-                    <div style="width: 640px; margin: 0 auto;">
+                    <div style="width: 640px; margin: 0 auto;" class="fragment fade-up">
                     <pre><code class="hljs" contenteditable style="text-align: center;">
 |m00  m01  m02  m03|   |n00  n01  n02  n03|
 |m10  m11  m12  m13| * |n10  n11  n12  n13|
@@ -166,7 +169,7 @@
                     <div id="matrix-mult">
                         <div id="t-r">
                             <pre style="margin-left: 0;margin-right: 0;width: 100%;"><code id="style-special1" class="hljs" data-trim contenteditable>
-.anime {
+.animate {
 transform:rotate(1turn) translateX(90px);
 }
                             </code></pre>
@@ -178,7 +181,7 @@ transform:rotate(1turn) translateX(90px);
                         </div>
                         <div id="r-t">
                             <pre style="margin-left: 0;margin-right: 0;width: 100%;"><code id="style-special2" class="hljs" data-trim contenteditable>
-.anime {
+.animate {
 transform:translateX(90px) rotate(1turn);
 }
                             </code></pre>
@@ -247,41 +250,46 @@ Y轴旋转矩阵             Z轴旋转矩阵
                     </div>
                 </section>
                 <section>
-                    <pre><code style="max-height: 600px;" class="hljs" contenteditable>
-
+                    <div style="width: 740px;margin: 0 auto;">
+                        <div class="fragment fade-left" style="padding: 10px 0;">
+                        <pre style="margin: 0;"><code class="hljs" data-trim contenteditable>
 // 单位圆得到等式
 x` = cos(β+α) * r
 y` = sin(β+α) * r
-
+                        </code></pre>
+                        </div>
+                        <div class="fragment fade-left" style="padding: 10px 0;">
+                        <pre style="margin: 0;"><code class="hljs" data-trim contenteditable>
 // 已知
 r = √(x^2+y^2)
-
 // 和差化积公式
 sin(β+α) = sin(β)cos(α) + cos(β)sin(α)
 cos(β+α) = cos(β)cos(α) - sin(β)sin(α)
-
 // 正弦余弦定义
 cos(α) = x/r
 sin(α) = y/r
-
-// 愉快的代入
+                        </code></pre>
+                        </div>
+                        <div class="fragment fade-left" style="padding: 10px 0;">
+                        <pre style="margin: 0;"><code class="hljs stata" data-trim contenteditable>
+// 愉快的代入 
 x` = (cos(β)x/r - sin(β)y/r) * r = cos(β)x - sin(β)y
 y` = (sin(β)x/r + cos(β)y/r) * r = sin(β)x + cos(β)y
+                        </code></pre>
+                        </div>
+                        <div class="fragment fade-left" style="padding: 10px 0;">
+                        <pre style="margin: 0;"><code class="hljs stata" data-trim contenteditable>
+/* 所以猜想旋转矩阵 ＝> */ |cos(β) -sin(β)|
+                        |sin(β)  cos(β)|
 
-// 所以猜想旋转矩阵 =>
-
-|cos(β) -sin(β)|
-|sin(β)  cos(β)|
-
-// 验证下 =>
-
-|x`|   |cos(β) -sin(β)|   |x|
-|y`| = |sin(β)  cos(β)| * |y|
+/* 验证下     => */      |x`|   |cos(β) -sin(β)|   |x|
+                        |y`| = |sin(β)  cos(β)| * |y|
 
 x` = cos(β)x - sin(β)y
 y` = sin(β)x + cos(β)y
-
-                    </code></pre>
+                        </code></pre>
+                        </div>
+                        </div>
                 </section>
             </section>
             <section>
@@ -433,6 +441,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
     <script>
     // More info https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
+        width: 1200,
         controls: true,
         progress: true,
         history: true,

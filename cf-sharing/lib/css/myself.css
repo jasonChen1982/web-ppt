@@ -148,7 +148,7 @@ to {-webkit-transform: scale(1);}
     height: 160px;
     transform-style: preserve-3d;
     box-sizing: border-box;
-    border: 3px solid transparent;
+    border: 4px solid transparent;
 }
 #cube_box_3d .face_front {
     left: 0;
@@ -224,7 +224,8 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
 #t-r div, #r-t div {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    left: 15%;
+    width: 70%;
     height: 320px;
     background-color: #21202e;
 }
@@ -365,17 +366,17 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
     width: 100%;
     top: 50%;
     left: 0;
-    border-top: 2px solid #fff;
+    border-top: 4px solid #fff;
 }
 #coordinate-system .axis-x:before {
     position: absolute;
     content: '';
-    width: 16px;
-    height: 16px;
-    top: -9px;
-    right: 0;
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
+    width: 24px;
+    height: 24px;
+    top: -15px;
+    right: -2px;
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
     transform: scaleY(0.7) rotate(45deg);
 }
 
@@ -384,28 +385,29 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
     height: 100%;
     top: 0;
     left: 50%;
-    border-left: 2px solid #fff;
+    margin-left: -2px;
+    border-left: 4px solid #fff;
 }
 #coordinate-system .axis-y:before {
     position: absolute;
     content: '';
-    width: 16px;
-    height: 16px;
-    top: 0;
-    right: -8px;
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
+    width: 24px;
+    height: 24px;
+    top: -2px;
+    right: -12px;
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
     transform: scaleX(0.7) rotate(-45deg);
 }
 
 #coordinate-system .axis-x i {
     position: absolute;
     right: -30px;
-    top: -10px;
+    top: -14px;
 }
 #coordinate-system .axis-y i {
     position: absolute;
-    right: -30px;
+    right: -34px;
     top: -20px;
 }
 
@@ -417,7 +419,7 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
     height: 300px;
     margin: -150px 0 0 -150px;
     border-radius: 50%;
-    border: 1px dashed rgba(234, 232, 206, 0.42);
+    border: 2px dashed rgba(234, 232, 206, 0.42);
 }
 
 #coordinate-system .pre-line {
@@ -425,7 +427,7 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
     left: 50%;
     top: 50%;
     width: 150px;
-    border-bottom: 2px solid #f93166;
+    border-bottom: 4px solid #f93166;
     transform-origin: left;
     transform: rotate(-30deg);
     text-align: center;
@@ -433,25 +435,26 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
 #coordinate-system .pre-line:before {
     position: absolute;
     content: '';
-    right: -5px;
-    top: -2px;
-    width: 6px;
-    height: 6px;
+    right: -7px;
+    top: -3px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: #f93166;
 }
 #coordinate-system .pre-line span {
     position: absolute;
-    right: -90px;
+    right: -96px;
     top: -15px;
     transform: rotate(30deg);
-    font-size: 30px;
+    font-size: 36px;
     color: #68cee1;
 }
 #coordinate-system .pre-line i {
     position: absolute;
     bottom: 0;
     color: #e7d667;
+    font-size: 40px;
 }
 
 
@@ -460,7 +463,7 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
     left: 50%;
     top: 50%;
     width: 150px;
-    border-bottom: 2px dashed #f93166;
+    border-bottom: 4px dashed #f93166;
     transform-origin: left;
     transform: rotate(-130deg);
     animation: ani_s_d 4s infinite cubic-bezier(0.32, 0, 0, 1);
@@ -468,10 +471,10 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
 #coordinate-system .next-line:before {
     position: absolute;
     content: '';
-    right: -5px;
-    top: -2px;
-    width: 6px;
-    height: 6px;
+    right: -6px;
+    top: -3px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: #f93166;
 }
@@ -480,23 +483,23 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -170px 0 0 -160px;
+    margin: -170px 0 0 -170px;
     color: #68cee1;
-    font-size: 30px;
+    font-size: 36px;
 }
 #coordinate-system .deg-alpha {
     position: absolute;
-    left: 62%;
+    left: 61%;
     top: 43%;
-    font-size: 26px;
+    font-size: 30px;
     color: #a1dd39;
 }
 
 #coordinate-system .deg-beta {
     position: absolute;
     left: 51%;
-    top: 38%;
-    font-size: 26px;
+    top: 39%;
+    font-size: 30px;
     color: #a1dd39;
 }
 
@@ -510,5 +513,5 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
 }
 
 #style-special1 span,#style-special2 span {
-    font-size: 18px;
+    font-size: 24px;
 }
