@@ -63,13 +63,15 @@
             <section>
                 <section>
                     <h2>感受下矩阵</h2>
+                    <p style="font-size: 30px;line-height: 40px;">Feel by heart</p>
                 </section>
-                <section data-background-video="./video/screen1.mov" data-background-color="transparent"></section>
-                <section data-background-video="./video/screen2.mov" data-background-color="transparent"></section>
-                <section data-background-video="./video/screen3.mov" data-background-color="transparent"></section>
+                <section data-background-video="./video/screen1.mov" data-background-video-loop data-background-video-muted data-background-color="transparent"></section>
+                <section data-background-video="./video/screen2.mov" data-background-video-loop data-background-video-muted data-background-color="transparent"></section>
+                <section data-background-video="./video/screen3.mov" data-background-video-loop data-background-video-muted data-background-color="transparent"></section>
             </section>
             <section>
                 <h2>矩阵</h2>
+                <p style="font-size: 30px;line-height: 40px;">Matrix</p>
             </section>
             <section>
                 <section>
@@ -78,19 +80,19 @@
                 <section>
                     <h2>常见的CSS3动画</h2>
                     <div id="animate_translate">
-                        <span>位移动画</span>
+                        <span>translate</span>
                         <div></div>
                     </div>
                     <div id="animate_rotate">
-                        <span>旋转动画</span>
+                        <span>rotate</span>
                         <div></div>
                     </div>
                     <div id="animate_scale">
-                        <span>缩放动画</span>
+                        <span>scale</span>
                         <div></div>
                     </div>
                     <div id="animate_skew">
-                        <span>斜切动画</span>
+                        <span>skew</span>
                         <div></div>
                     </div>
                 </section>
@@ -111,7 +113,53 @@
                 </section>
                 <section>
                     <h2>描述旋转</h2>
-                    <span>rotateX|Y|Z <span style="color: #13DAEC;"> 和 </span> rotate3d</span>
+                    <p style="font-size: 24px；">Expression rotation in math</p>
+                    <div id="three-method">
+                        <div id="first-method" class="fragment fade-down" data-fragment-index="0">
+                            <p style="font-size: 30px;color: #13DAEC;">矩阵</p>
+                            <p style="font-size: 30px;color: #13DAEC;">↡</p>
+                            <p style="font-size: 30px;color: #13DAEC;">matrix3d</p>
+                    <pre><code class="hljs" contenteditable style="text-align: center;height: 200px;">
+
+
+|        |
+| matrix |
+|        |
+                    </code></pre>
+                        </div>
+                        <div id="sec-method" class="fragment fade-down" data-fragment-index="1">
+                            <p style="font-size: 30px;color: #13DAEC;">欧拉角</p>
+                            <div class="fragment fade-down" data-fragment-index="3">
+                            <p style="font-size: 30px;color: #13DAEC;">↡</p>
+                            <p style="font-size: 30px;color: #13DAEC;">rotateX|Y|Z</p>
+                                <div id="euler-r">
+                                    <div id="euler_3d">
+                                        <span class="face_normal face_front"></span>
+                                        <span class="face_normal face_left"></span>
+                                        <span class="face_normal face_top"></span>
+                                        <span class="axis-face axis-x"></span>
+                                        <span class="axis-face axis-y"></span>
+                                        <span class="axis-face axis-z"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="third-method" class="fragment fade-down" data-fragment-index="2">
+                            <p style="font-size: 30px;color: #13DAEC;">四元数</p>
+                            <div class="fragment fade-down" data-fragment-index="4">
+                            <p style="font-size: 30px;color: #13DAEC;">↡</p>
+                            <p style="font-size: 30px;color: #13DAEC;">rotate3d</p>
+                                <div id="quate-r">
+                                    <div id="quate_3d">
+                                        <span class="face_normal face_front"></span>
+                                        <span class="face_normal face_left"></span>
+                                        <span class="face_normal face_top"></span>
+                                        <span class="axis-face"><span></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section>
                     <div style="position: absolute; top: 0; width: 100%;">
@@ -129,12 +177,13 @@
                 </section>
                 <section>
                     <h2>矩阵很重要</h2>
-                    <p>如上的各种变换都是利用矩阵来实现的</p>
+                    <p>transform功能依赖矩阵</p>
                 </section>
             </section>
             <section>
                 <section>
                     <h3>矩阵是什么</h3>
+                    <p style="font-size: 30px;line-height: 40px;">What is matrix</p>
                     <div style="width: 300px; margin: 0 auto;" class="fragment fade-up" data-fragment-index="0">
                     <pre><code class="hljs" contenteditable style="text-align: center;">
 |m00  m01  m02  m03|
@@ -197,6 +246,7 @@ transform:translateX(90px) rotate(1turn);
             <section>
                 <section>
                     <h2>价值</h2>
+                    <p style="font-size: 30px;line-height: 40px;">Extra value</p>
                 </section>
                 <section>
                     <h2>进一步了解矩阵</h2>
@@ -338,7 +388,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
             </section>
             <section>
                 <section>
-                    <h2>更复杂一点的应用</h2>
+                    <h2>深入一点的应用</h2>
                 </section>
                 <section>
                     <h2>加上其它知识点～</h2>
@@ -358,8 +408,8 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
                     <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webglAR/">从视频解算照相机参数</a></p>
                 </section>
                 <section>
-                    <h2>web端遇到的麻烦</h2>
-                    <p style="font-size: 30px;line-height: 40px;">媒体硬件支持、视频图像内容的实时读取</p>
+                    <h2>移动端的阻碍</h2>
+                    <p style="font-size: 30px;line-height: 40px;">WebRTC、Get video frame</p>
                 </section>
             </section>
             <section>

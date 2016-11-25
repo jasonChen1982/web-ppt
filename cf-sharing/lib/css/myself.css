@@ -18,6 +18,7 @@
     width: 400px;
     margin: 20px auto 0;
     height: 100px;
+    text-align: left;
 }
 #animate_translate span,#animate_rotate span,#animate_skew span,#animate_scale span {
     position: absolute;
@@ -515,3 +516,159 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
 #style-special1 span,#style-special2 span {
     font-size: 24px;
 }
+
+
+#three-method {
+    position: relative;
+    width: 1000px;
+    height: 360px;
+    margin: 60px auto 0;
+}
+#three-method p {
+    margin: 0;
+}
+#first-method {
+    position: absolute;
+    width: 32%;
+    height: 100%;
+    left: 0;
+}
+#sec-method {
+    position: absolute;
+    width: 32%;
+    height: 100%;
+    left: 34%;
+}
+#third-method {
+    position: absolute;
+    width: 32%;
+    height: 100%;
+    right: 0;
+}
+
+#euler-r {
+    position: relative;
+    height: 200px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: #2d2d2d;
+    perspective: 400px;
+}
+#quate-r {
+    position: relative;
+    height: 200px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: #2d2d2d;
+    perspective: 400px;
+}
+#euler_3d,#quate_3d {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(50deg);
+}
+#quate_3d {
+    transform: rotateX(-15deg) rotateY(20deg);
+}
+#euler_3d .face_normal,#quate_3d .face_normal {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    transform-style: preserve-3d;
+    box-sizing: border-box;
+}
+#euler_3d .face_front,#quate_3d .face_front {
+    left: 0;
+    top: 0;
+    transform: translateZ(30px);
+    background-color: #d8d5d0;
+}
+#euler_3d .face_left,#quate_3d .face_left {
+    left: -50%;
+    top: 0;
+    transform: rotateY(-90deg);
+    background-color: #bdbab3;
+}
+#euler_3d .face_top,#quate_3d .face_top {
+    left: 0;
+    top: -50%;
+    transform: rotateX(-90deg);
+    background-color: #f5f1e7;
+}
+#euler_3d .axis-face {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px;
+    border: 3px solid #3645fb;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+}
+#euler_3d .axis-x {
+
+}
+#euler_3d .axis-y {
+    transform: rotateX(90deg);
+    border: 2px solid #00ff20;
+}
+#euler_3d .axis-z {
+    transform: rotateY(90deg);
+    border: 2px solid #fb2727;
+}
+#quate_3d .axis-face {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 3px;
+    margin: -1px 0 0 -100px;
+    background-color: #ff0;
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateY(-55deg);
+}
+#quate_3d .axis-face:before {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #ff0;
+    border-right: 3px solid #ff0;
+    transform: scaleY(.8) rotate(45deg);
+}
+#quate_3d .axis-face span {
+    position: absolute;
+    right: 10px;
+    top: -20px;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #24c765;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transform: rotateY(90deg);
+}
+#quate_3d .axis-face span:after {
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: -2px;
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #24c765;
+    border-right: 3px solid #24c765;
+}
+
+
+
+
+
