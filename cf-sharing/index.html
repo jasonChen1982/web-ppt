@@ -196,12 +196,12 @@
                 </section>
                 <section>
                     <h3>矩阵乘法</h3>
-                    <div style="width: 500px; margin: 0 auto;" class="fragment fade-up">
-                    <pre><code class="hljs" contenteditable>
-| x` |   |m00  m01  m02  m03|   | x |
-| y` | = |m10  m11  m12  m13| * | y |
-| z` |   |m20  m21  m22  m23|   | z |
-| w` |   |m30  m31  m32  m33|   | w |
+                    <div style="width: 460px; margin: 0 auto;" class="fragment fade-up">
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
+| x` |   |1  0  0  tx|   | x |
+| y` | = |0  1  0  ty| * | y |
+| z` |   |0  0  1  tz|   | z |
+| w` |   |0  0  0   1|   | w |
                     </code></pre>
                     </div>
                     <div style="width: 640px; margin: 0 auto;" class="fragment fade-up">
@@ -363,6 +363,7 @@ y` = sin(β)x + cos(β)y
                 </section>
                 <section>
                     <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points3">旋转矩阵</a></p>
+                    <div style="width: 900px; margin: 0 auto;">
                     <pre><code class="hljs" contenteditable style="text-align: center;">
 X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
 |1   0     0    0|   |cosβ   0   sinβ  0|   |cosβ  -sinβ  0  0|
@@ -370,10 +371,12 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
 |0 -sinβ  cosβ  0|   |-sinβ  0   cosβ  0|   |  0    0     1  0|
 |0   0     0    1|   |  0    0    0    1|   |  0    0     0  1|
                     </code></pre>
+                    </div>
                     <iframe height='320' scrolling='no' title='webgl-rotate' src='//codepen.io/JasonChen1982/embed/preview/ZpdVxe/?height=320&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/ZpdVxe/'>webgl-rotate</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
                 </section>
                 <section>
                     <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points4">旋转矩阵 * 位移矩阵</a></p>
+                    <div style="width: 820px; margin: 0 auto;">
                     <pre><code class="hljs" contenteditable style="text-align: center;">
 位移矩阵          X轴旋转矩阵             Y轴旋转矩阵
 |1  0  0  tx|   |1   0     0    0|   |cosβ   0   sinβ  0|
@@ -381,6 +384,7 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
 |0  0  1  tz|   |0 -sinβ  cosβ  0|   |-sinβ  0   cosβ  0|
 |0  0  0   1|   |0   0     0    1|   |  0    0    0    1|
                     </code></pre>
+                    </div>
                     <iframe height='320' scrolling='no' title='mrZGzY' src='//codepen.io/JasonChen1982/embed/preview/mrZGzY/?height=320&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/mrZGzY/'>mrZGzY</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
                 </section>
                 <section>
