@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>认真喝茶</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="lib/css/myself.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h2>css3 transform</h2>
+            </section>
+            <section>
+                <section>
+                    <h3>transform tips</h3>
+                    <p class="fragment fade-up">translate、scale、rotate、skew</p>
+                    <p class="fragment fade-up">由矩阵实现，注意你操作的顺序</p>
+                    <p class="fragment fade-up">matrix，实现你自己的放射变换</p>
+                    <p class="fragment fade-up">rotate3d(x,y,z,deg)用法</p>
+                </section>
+                <section>
+                    <img width="600px" style="background: transparent; border: none;box-shadow: none;" src="./imgs/axis.jpg" />
+                </section>
+                <section>
+                    <img width="700px" style="background: transparent; border: none;box-shadow: none;" src="./imgs/mirr.jpg" />
+                </section>
+                <section>
+                    <div style="width: 700px; margin: 0 auto;">
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
+| (1-k^2)/(1+k^2)    2k/(1+k^2)     0|   | x |
+|    2k/(1+k^2)   -(1-k^2)/(1+k^2)  0| * | y |
+|        0               0          1|   | w |
+                    </code></pre>
+                    </div>
+                    <div id="demo-list">
+                        <div class="normal-box"></div>
+                        <div class="mirror-box"></div>
+                        <span></span>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <h3>分清楚样式类型</h3>
+                <p class="fragment fade-up">非特殊情况下不要用transform来做布局工作</p>
+                <p class="fragment fade-up">为了你的动画和页面性能，合理划分页面层次</p>
+                <p class="fragment fade-up"><a target="_blank" href="//m.taobao.com">反面教材</a></p>
+            </section>
+            <section>
+                <h1>thanks</h1>
+                <p>应该没超时</p>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        width: 1200,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>
