@@ -31,24 +31,26 @@
     height: 100px;
     width: 100px;
     margin: 0 auto;
+    background: url(../../imgs/yubo.jpg);
+    background-size: 100px 100px;
 }
 #animate_translate div {
-    background-color: #FF4E50;
+    /*background-color: #FF4E50;*/
     animation: ani_translate 1s infinite alternate ease-in-out;
     -webkit-animation: ani_translate 1s infinite alternate ease-in-out;
 }
 #animate_rotate div {
-    background-color: #69D2E7;
+    /*background-color: #69D2E7;*/
     animation: ani_rotate 1s infinite alternate ease-in-out;
     -webkit-animation: ani_rotate 1s infinite alternate ease-in-out;
 }
 #animate_skew div {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
     animation: ani_skew 1s infinite alternate ease-in-out;
     -webkit-animation: ani_skew 1s infinite alternate ease-in-out;
 }
 #animate_scale div {
-    background-color: #F9D423;
+    /*background-color: #F9D423;*/
     animation: ani_scale 1s infinite alternate ease-in-out;
     -webkit-animation: ani_scale 1s infinite alternate ease-in-out;
 }
