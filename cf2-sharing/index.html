@@ -29,11 +29,9 @@
 
 <body>
     <div class="reveal">
-        <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section>
                 <h2 id="title">从矩阵走入 WebGL 世界</h2>
-                <!-- <p class="fragment" data-fragment-index="0" style="font-size: 24px;line-height: 40px;">程序猿也可以做一些美丽的事</p> -->
             </section>
             <section>
                 <h2 id="title"><img width="100" style="border-radius: 50%;" src="./imgs/header.jpg"></h2>
@@ -44,22 +42,6 @@
                     <p class="dot-left">编程动画、WebGL</p>
                 </div>
             </section>
-            <!-- <section>
-                <section>
-                    <h2 id="title">矩阵</h2>
-                    <p style="font-size: 24px;line-height: 40px;">想和大家叨叨的一些内容</p>
-                </section>
-                <section>
-                    <div style="width: 480px; margin: 0 auto; text-align: left;">
-                        <p class="dot-left">常见的动画与矩阵的关系</p>
-                        <p class="dot-left">矩阵几何意义，手撕demo</p>
-                        <p class="dot-left">谈谈AR，demo实现</p>
-                        <p class="dot-left">谈谈VR，demo体验</p>
-                        <p class="dot-left">移动端性能优化建议</p>
-                        <p class="dot-left">Q&A</p>
-                    </div>
-                </section>
-            </section> -->
             <section>
                 <h2>感受下矩阵</h2>
                 <p style="font-size: 30px;line-height: 40px;">Feel by heart</p>
@@ -199,12 +181,12 @@
 | w` |   |0  0  0   1|   | w |
                 </code></pre>
                 </div>
-                <div style="width: 640px; margin: 0 auto;" class="fragment fade-up">
+                <div style="width: 520px; margin: 0 auto;" class="fragment fade-up">
                 <pre><code class="hljs" contenteditable style="text-align: center;">
-|m00  m01  m02  m03|   |n00  n01  n02  n03|
-|m10  m11  m12  m13| * |n10  n11  n12  n13|
-|m20  m21  m22  m23|   |n20  n21  n22  n23|
-|m30  m31  m32  m33|   |n30  n31  n32  n33|
+|1  0  0  tx|   |cosβ  -sinβ  0  0|
+|0  1  0  ty| * |sinβ  cosβ   0  0|
+|0  0  1  tz|   |  0    0     1  0|
+|0  0  0   1|   |  0    0     0  1|
                 </code></pre>
                 </div>
             </section>
@@ -280,7 +262,6 @@ Y轴旋转矩阵             Z轴旋转矩阵
             </section>
             <section>
                 <p>rotateZ(βdeg) 矩阵推导</p>
-                <!-- <p><img width="480" height="480" style="border: 0;" data-src="./imgs/rotate.png"></p> -->
                 <div id="coordinate-system">
                     <span class="axis-x"><i>x</i></span>
                     <span class="axis-y"><i>y</i></span>
@@ -299,6 +280,7 @@ Y轴旋转矩阵             Z轴旋转矩阵
 // 单位圆得到等式
 x` = cos(β+α) * r
 y` = sin(β+α) * r
+z` = z
                     </code></pre>
                     </div>
                     <div class="fragment fade-left" style="padding: 10px 0;">
@@ -418,57 +400,13 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/flyCarVR/">别说话，先上车</a></p>
             </section>
             <section>
-                <img width="620" height="620" style="border: 0;" data-src="./imgs/vr.jpg">
+                <p style="font-size: 30px;line-height: 40px;color: #13DAEC;">进村</p>
+                <img width="620" height="620" style="border: 0;" data-src="./imgs/earth-vr.png">
             </section>
-            <!-- <section>
-                <section>
-                    <h2>最后谈谈如何实现高性能动画</h2>
-                    <p>移动端动画开发需要注意什么</p>
-                </section>
-                <section>
-                    <h2>一些建议</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width="100">方 案</th>
-                                <th>使用建议</th>
-                            </tr>
-                        </thead>
-                        <tbody style="font-size:28px;">
-                            <tr>
-                                <td>CSS3</td>
-                                <td>适合运动简单的、运动的物体少的，注意合成层的问题，为页面规划合理的合成层</td>
-                            </tr>
-                            <tr>
-                                <td>SVG</td>
-                                <td>当动画的元素都是一些几何形状、线条的时候，物体数量在20个以下的时候</td>
-                            </tr>
-                            <tr>
-                                <td>canvas</td>
-                                <td>当上面两种情况不适用的时候，动画比较复杂</td>
-                            </tr>
-                            <tr>
-                                <td>webgl 2d</td>
-                                <td>有大量的同层级的物体渲染的时候，可以使用batch技术实现打包渲染</td>
-                            </tr>
-                            <tr>
-                                <td>webgl</td>
-                                <td>有大量的三维效果</td>
-                            </tr>
-                            <tr>
-                                <td>webAudio</td>
-                                <td>音频处理能力</td>
-                                <td>依赖浏览器</td>
-                                <td><del style="color: #f00;">U3 U4</del></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section>
-                    <p><a target="_blank" href="http://codepen.io/sol0mka/full/ogOYJj/">线条动画</a></p>
-                    <p><a target="_blank" href="http://127.0.0.1:5050/webAudio/music/">快速傅立叶变换、音频解析</a></p>
-                </section>
-            </section> -->
+            <section>
+                <p style="font-size: 30px;line-height: 40px;color: #13DAEC;">上车</p>
+                <img width="620" height="620" style="border: 0;" data-src="./imgs/car-vr.jpg">
+            </section>
             <section>
                 <h1>Q&A</h1>
             </section>
