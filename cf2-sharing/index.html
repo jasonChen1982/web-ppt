@@ -36,28 +36,27 @@
             <section>
                 <h2 id="title"><img width="100" style="border-radius: 50%;" src="./imgs/header.jpg"></h2>
                 <div style="width: 360px; margin: 0 auto; text-align: left;">
-                    <p class="dot-left">陈剑鑫<span style="color: #13DAEC;"> → </span>JC</p>
-                    <p class="dot-left">UC 前端开发工程师</p>
-                    <p class="dot-left">活动营销</p>
+                    <p class="dot-left">陈剑鑫（阿里 UC）</p>
+                    <p class="dot-left">营销活动</p>
                     <p class="dot-left">编程动画、WebGL</p>
                 </div>
             </section>
             <section>
                 <h2>感受下矩阵</h2>
-                <p style="font-size: 30px;line-height: 40px;">Feel by heart</p>
+                <p style="font-size: 50px;line-height: 40px;">Feel by heart</p>
             </section>
             <section data-background-video="./video/screen01.mov" data-background-video-loop data-background-video-muted data-background-color="transparent"></section>
             <section data-background-video="./video/screen02.mov" data-background-video-loop data-background-video-muted data-background-color="transparent"></section>
             <section data-background-video="./video/screen03.mov" data-background-video-loop data-background-video-muted data-background-color="transparent"></section>
             <section>
                 <h2>矩阵</h2>
-                <p style="font-size: 30px;line-height: 40px;">Matrix</p>
+                <p style="font-size: 50px;line-height: 40px;">Matrix</p>
             </section>
             <section>
-                <h2>CSS3<span style="text-transform:lowercase;"> transform </span>与矩阵的关系</h2>
+                <h2>CSS3<span style="text-transform: capitalize;"> transform </span><span id="heart-box">♥<span class="heart-red">♥</span><span class="heart-red">♥</span></span><span style="text-transform: capitalize;"> Matrix </span></h2>
             </section>
             <section>
-                <h2>常见的CSS3动画</h2>
+                <h2><span style="text-transform: capitalize;"> transform </span>2d变换</h2>
                 <div id="animate_translate">
                     <span>translate</span>
                     <div></div>
@@ -76,7 +75,7 @@
                 </div>
             </section>
             <section>
-                <h2>CSS3 带来的3D</h2>
+                <h2><span style="text-transform: capitalize;"> transform </span>3d变换</h2>
                 <div id="animate_rotate_3d">
                     <div id="view_box_3d">
                         <div id="cube_box_3d">
@@ -152,15 +151,14 @@
                     <h2>canvas 2d api</h2>
                     <p style="font-size: 24px;line-height: 40px;">transform 2d</p>
                 </div>
-                <iframe data-src="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle/" width="700" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+                <iframe data-src="https://jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle/" width="900" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
             </section>
             <section>
-                <h2>矩阵很重要</h2>
-                <p>transform的实现依赖矩阵</p>
+                <h2 style="text-transform: capitalize;">Matrix Is very important</h2>
+                <p>transform 的实现基于矩阵</p>
             </section>
             <section>
-                <h3>矩阵是什么</h3>
-                <p style="font-size: 30px;line-height: 40px;">What is matrix</p>
+                <h3 style="text-transform: capitalize;">What is matrix</h3>
                 <div style="width: 300px; margin: 0 auto;" class="fragment fade-up" data-fragment-index="0">
                 <pre><code class="hljs" contenteditable style="text-align: center;">
 |m00  m01  m02  m03|
@@ -169,11 +167,14 @@
 |m30  m31  m32  m33|
                 </code></pre>
                 </div>
-                <p style="font-size: 24px;line-height: 40px;" class="fragment fade-up" data-fragment-index="1">几何意义：描述几何空间的仿射变换</p>
+                <p style="font-size: 40px;line-height: 40px;" class="fragment fade-up" data-fragment-index="1">描述几何空间的仿射变换</p>
             </section>
             <section>
-                <h3>矩阵乘法</h3>
-                <div style="width: 460px; margin: 0 auto;" class="fragment fade-up">
+                <h2>矩阵乘法</h2>
+            </section>
+            <section>
+                <h3>变换坐标点</h3>
+                <div style="width: 460px; margin: 0 auto;">
                 <pre><code class="hljs" contenteditable style="text-align: center;">
 | x` |   |1  0  0  tx|   | x |
 | y` | = |0  1  0  ty| * | y |
@@ -181,7 +182,18 @@
 | w` |   |0  0  0   1|   | w |
                 </code></pre>
                 </div>
-                <div style="width: 520px; margin: 0 auto;" class="fragment fade-up">
+                <div style="width: 460px; margin: 0 auto;">
+                <pre><code class="hljs" contenteditable style="text-align: left;">
+  | x` | = |x + tx|
+  | y` | = |y + ty|
+  | z` | = |z + tz|
+  | w` | = |  w   |
+                </code></pre>
+                </div>
+            </section>
+            <section>
+                <h3>传递性</h3>
+                <div style="width: 520px; margin: 0 auto;">
                 <pre><code class="hljs" contenteditable style="text-align: center;">
 |1  0  0  tx|   |cosβ  -sinβ  0  0|
 |0  1  0  ty| * |sinβ  cosβ   0  0|
@@ -196,10 +208,10 @@
                     <div id="t-r">
                         <pre style="margin-left: 0;margin-right: 0;width: 100%;"><code id="style-special1" class="hljs" data-trim contenteditable>
 .animate {
-transform:rotate(1turn) translateX(90px);
+  transform:
+    rotate(1turn) translateX(90px);
 }
                         </code></pre>
-                        <p>rotate<span style="color: #13DAEC;"> * </span>translate</p>
                         <div>
                             <i></i>
                             <b></b>
@@ -208,10 +220,10 @@ transform:rotate(1turn) translateX(90px);
                     <div id="r-t">
                         <pre style="margin-left: 0;margin-right: 0;width: 100%;"><code id="style-special2" class="hljs" data-trim contenteditable>
 .animate {
-transform:translateX(90px) rotate(1turn);
+  transform:
+    translateX(90px) rotate(1turn);
 }
                         </code></pre>
-                        <p>translate<span style="color: #13DAEC;"> * </span>rotate</p>
                         <div>
                             <i></i>
                             <b></b>
@@ -220,8 +232,16 @@ transform:translateX(90px) rotate(1turn);
                 </div>
             </section>
             <section>
-                <h2>价值</h2>
+                <h2>额外价值</h2>
                 <p style="font-size: 30px;line-height: 40px;">Extra value</p>
+                <div style="width: 300px; margin: 0 auto;">
+                <pre><code class="hljs" contenteditable style="text-align: center;">
+|m00  m01  m02  m03|
+|m10  m11  m12  m13|
+|m20  m21  m22  m23|
+|m30  m31  m32  m33|
+                </code></pre>
+                </div>
             </section>
             <section>
                 <h2>进一步了解矩阵</h2>
@@ -321,7 +341,7 @@ y` = sin(β)x + cos(β)y
             </section>
             <section>
                 <h2>WebGL</h2>
-                <p style="color: #13DAEC;"><span class="fragment fade-up">渲染管线、</span><span class="fragment fade-up">着色器、</span><span class="fragment fade-up">几何数据</span></p>
+                <p style="color: #13DAEC;"><span class="fragment fade-up">着色器、</span><span class="fragment fade-up">几何数据、</span><span class="fragment fade-up">渲染管线</span></p>
             </section>
             <section>
                 <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points">位移矩阵</a></p>
@@ -368,21 +388,33 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
             </section>
             <section>
                 <h2>深入一点的应用</h2>
+                <p style="font-size: 40px;line-height: 40px;">加上其它知识点～</p>
             </section>
             <section>
-                <h2>加上其它知识点～</h2>
+                <iframe data-src="http://127.0.0.1:5050/webgl/butterfly/" width="640" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+            </section>
+            <section data-background="#010216">
+                <iframe data-src="http://127.0.0.1:5050/webgl/starsClouds/" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+            </section>
+            <section data-background="#c5b9ee">
+                <iframe data-src="http://127.0.0.1:5050/webgl/earthPolygon/" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+            </section>
+            <section>
+                <iframe data-src="http://127.0.0.1:9000/russiaolympics/index?uc_param_str=dsdnfrpfbivesscpgimibtbmnisieijblauputogpintnw" width="500" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+            </section>
+            <!--<section>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/butterfly/">欧拉角、矩阵、WebGL其它绘制api</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/starsClouds/">高阶bezier、四元数、各种矩阵</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/earthPolygon/">漂亮的模型、怎么弄都好看</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:9000/russiaolympics/index?uc_param_str=dsdnfrpfbivesscpgimibtbmnisieijblauputogpintnw">运用到项目上的小游戏</a></p>
-            </section>
+            </section>-->
             <section>
                 <h2>AR技术</h2>
                 <p style="font-size: 24px;line-height: 40px;">矩阵在AR上的应用</p>
             </section>
             <section>
                 <h2>demo</h2>
-                <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/webglAR/">从视频解算矩阵参数</a></p>
+                <iframe data-src="http://127.0.0.1:5050/webgl/webglAR/" width="640" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
             </section>
             <section>
                 <h2>移动端的阻碍</h2>
@@ -395,17 +427,23 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
             <section>
                 <h2>VR<span style="color: #13DAEC;"> → </span>Web VR 视觉</h2>
             </section>
-            <section>
+            <section  data-background="#b9dfee">
+                <iframe data-src="http://127.0.0.1:5050/webgl/earth/" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+            </section>
+            <section  data-background="#8bf2ff">
+                <iframe data-src="http://127.0.0.1:5050/webgl/flyCarVR/" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+            </section>
+            <!--<section>
                 <h2>demo</h2>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/earth/">来松鼠村看看</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/flyCarVR/">别说话，先上车</a></p>
-            </section>
+            </section>-->
             <section>
-                <p style="font-size: 30px;line-height: 40px;color: #13DAEC;">进村</p>
+                <p style="font-size: 30px;line-height: 40px;color: #13DAEC;margin: 0;">进村</p>
                 <img width="620" height="620" style="border: 0;" data-src="./imgs/earth-vr.png">
             </section>
             <section>
-                <p style="font-size: 30px;line-height: 40px;color: #13DAEC;">上车</p>
+                <p style="font-size: 30px;line-height: 40px;color: #13DAEC;margin: 0;">上车</p>
                 <img width="620" height="620" style="border: 0;" data-src="./imgs/car-vr.jpg">
             </section>
             <section>

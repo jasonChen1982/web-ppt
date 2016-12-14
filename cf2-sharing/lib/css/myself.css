@@ -14,8 +14,8 @@
 }
 #animate_translate,#animate_rotate,#animate_skew,#animate_scale {
     position: relative;
-    padding-left: 200px;
-    width: 400px;
+    padding-left: 120px;
+    width: 360px;
     margin: 20px auto 0;
     height: 100px;
     text-align: left;
@@ -157,42 +157,42 @@ to {-webkit-transform: scale(1);}
     left: 0;
     top: 0;
     transform: translateZ(80px);
-    // background-color: rgba(254, 67, 101, 0.9);
+    /*background-color: rgba(254, 67, 101, 0.9);*/
     border-color: #ff3753;
 }
 #cube_box_3d .face_back {
     left: 0;
     top: 0;
     transform: translateZ(-80px);
-    // background-color: rgba(252, 157, 154, 0.9);
+    /*background-color: rgba(252, 157, 154, 0.9);*/
     border-color: #ef7a27;
 }
 #cube_box_3d .face_left {
     left: -50%;
     top: 0;
     transform: rotateY(-90deg);
-    // background-color: rgba(249, 205, 173, 0.9);
+    /*background-color: rgba(249, 205, 173, 0.9);*/
     border-color: #00c4d7;
 }
 #cube_box_3d .face_right {
     right: -50%;
     top: 0;
     transform: rotateY(90deg);
-    // background-color: rgba(200, 200, 169, 0.9);
+    /*background-color: rgba(200, 200, 169, 0.9);*/
     border-color: #EEA42A;
 }
 #cube_box_3d .face_top {
     left: 0;
     top: -50%;
     transform: rotateX(-90deg);
-    // background-color: rgba(131, 175, 155, 0.9);
+    /*background-color: rgba(131, 175, 155, 0.9);*/
     border-color: #f5f1e7;
 }
 #cube_box_3d .face_bottom {
     left: 0;
     bottom: -50%;
     transform: rotateX(90deg);
-    // background-color: rgba(120, 255, 112, 0.9);
+    /*background-color: rgba(120, 255, 112, 0.9);*/
     border-color: #6bb5ab;
 }
 
@@ -214,21 +214,21 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
 }
 #t-r {
     position: absolute;
-    left: 0;
-    width: 49%;
-    height: 440px;
+    left: 5%;
+    width: 43%;
+    height: 480px;
 }
 #r-t {
     position: absolute;
-    right: 0;
-    width: 49%;
-    height: 440px;
+    right: 5%;
+    width: 43%;
+    height: 480px;
 }
 #t-r div, #r-t div {
     position: absolute;
     bottom: 0;
-    left: 15%;
-    width: 70%;
+    left: 10%;
+    width: 80%;
     height: 320px;
     background-color: #21202e;
 }
@@ -669,7 +669,37 @@ to {-webkit-transform: rotateY(360deg) rotateX(120deg);}
     border-top: 3px solid #24c765;
     border-right: 3px solid #24c765;
 }
+#heart-box {
+    position: relative;
+    color: #da3f74;
+    padding: 0 4px;
+}
+#heart-box span {
+    position: absolute;
+}
+#heart-box span:nth-child(1) {
+    top: 7px;
+    right: 0px;
+    font-size: 20px;
+    animation: blink .4s infinite alternate ease-in-out;
+}
+#heart-box span:nth-child(2) {
+    top: 0;
+    right: -6px;
+    font-size: 12px;
+    animation: blink .4s .2s infinite alternate ease-in-out;
+}
 
+@keyframes blink
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+@-webkit-keyframes blink 
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
 
 
 
