@@ -344,42 +344,57 @@ y` = sin(β)x + cos(β)y
                 <p style="color: #13DAEC;"><span class="fragment fade-up">着色器、</span><span class="fragment fade-up">几何数据、</span><span class="fragment fade-up">渲染管线</span></p>
             </section>
             <section>
-                <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points">位移矩阵</a></p>
-                <div style="width: 300px; margin: 0 auto;">
-                <pre><code class="hljs" contenteditable style="text-align: center;">
+                <section>
+                    <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points">位移矩阵</a></p>
+                    <div style="width: 300px; margin: 0 auto;">
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
 |1  0  0  tx|
 |0  1  0  ty|
 |0  0  1  tz|
 |0  0  0   1|
-                </code></pre>
-                </div>
-                <iframe height='420' scrolling='no' title='webgl-translate' data-src='//codepen.io/JasonChen1982/embed/preview/Kgjxeg/?height=420&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/Kgjxeg/'>webgl-translate</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                    </code></pre>
+                    </div>
+                    <iframe height='420' scrolling='no' title='webgl-translate' data-src='//codepen.io/JasonChen1982/embed/preview/Kgjxeg/?height=420&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/Kgjxeg/'>webgl-translate</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                </section>
+                <section data-background="#000000">
+                    <iframe data-src="http://127.0.0.1:5050/webgl/webgl/points" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+                </section>
             </section>
             <section>
-                <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points3">旋转矩阵</a></p>
-                <div style="width: 900px; margin: 0 auto;">
-                <pre><code class="hljs" contenteditable style="text-align: center;">
+                <section>
+                    <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points3">旋转矩阵</a></p>
+                    <div style="width: 900px; margin: 0 auto;">
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
 X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
 |1   0     0    0|   |cosβ   0   sinβ  0|   |cosβ  -sinβ  0  0|
 |0  cosβ  sinβ  0|   |  0    1    0    0|   |sinβ  cosβ   0  0|
 |0 -sinβ  cosβ  0|   |-sinβ  0   cosβ  0|   |  0    0     1  0|
 |0   0     0    1|   |  0    0    0    1|   |  0    0     0  1|
-                </code></pre>
-                </div>
-                <iframe height='400' scrolling='no' title='webgl-rotate' data-src='//codepen.io/JasonChen1982/embed/preview/ZpdVxe/?height=400&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/ZpdVxe/'>webgl-rotate</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                    </code></pre>
+                    </div>
+                    <iframe height='400' scrolling='no' title='webgl-rotate' data-src='//codepen.io/JasonChen1982/embed/preview/ZpdVxe/?height=400&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/ZpdVxe/'>webgl-rotate</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                </section>
+                <section data-background="#000000">
+                    <iframe data-src="http://127.0.0.1:5050/webgl/webgl/points3" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+                </section>
             </section>
             <section>
-                <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points4">旋转矩阵 * 位移矩阵</a></p>
-                <div style="width: 820px; margin: 0 auto;">
-                <pre><code class="hljs" contenteditable style="text-align: center;">
+                <section>
+                    <p><a target="_blank" href="http://127.0.0.1:5050/webgl/webgl/points4">旋转矩阵 * 位移矩阵</a></p>
+                    <div style="width: 820px; margin: 0 auto;">
+                    <pre><code class="hljs" contenteditable style="text-align: center;">
 位移矩阵          X轴旋转矩阵             Y轴旋转矩阵
 |1  0  0  tx|   |1   0     0    0|   |cosβ   0   sinβ  0|
 |0  1  0  ty|   |0  cosβ  sinβ  0|   |  0    1    0    0|
 |0  0  1  tz|   |0 -sinβ  cosβ  0|   |-sinβ  0   cosβ  0|
 |0  0  0   1|   |0   0     0    1|   |  0    0    0    1|
-                </code></pre>
-                </div>
-                <iframe height='400' scrolling='no' title='mrZGzY' data-src='//codepen.io/JasonChen1982/embed/preview/mrZGzY/?height=400&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/mrZGzY/'>mrZGzY</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                    </code></pre>
+                    </div>
+                    <iframe height='400' scrolling='no' title='mrZGzY' data-src='//codepen.io/JasonChen1982/embed/preview/mrZGzY/?height=400&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/JasonChen1982/pen/mrZGzY/'>mrZGzY</a> by JasonChen (<a href='http://codepen.io/JasonChen1982'>@JasonChen1982</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                </section>
+                <section data-background="#000000">
+                    <iframe data-src="http://127.0.0.1:5050/webgl/webgl/points4" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+                </section>
             </section>
             <section>
                 <h2>实用点～</h2>
@@ -427,25 +442,29 @@ X轴旋转矩阵            Y轴旋转矩阵             Z轴旋转矩阵
             <section>
                 <h2>VR<span style="color: #13DAEC;"> → </span>Web VR 视觉</h2>
             </section>
-            <section  data-background="#b9dfee">
-                <iframe data-src="http://127.0.0.1:5050/webgl/earth/" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+            <section>
+                <section  data-background="#b9dfee">
+                    <iframe data-src="http://127.0.0.1:5050/webgl/earth/" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+                </section>
+                <section>
+                    <p style="font-size: 30px;line-height: 40px;color: #13DAEC;margin: 0;">进村</p>
+                    <img width="620" height="620" style="border: 0;" data-src="./imgs/earth-vr.png">
+                </section>
             </section>
-            <section  data-background="#8bf2ff">
-                <iframe data-src="http://127.0.0.1:5050/webgl/flyCarVR/" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+            <section>
+                <section  data-background="#8bf2ff">
+                    <iframe data-src="http://127.0.0.1:5050/webgl/flyCarVR/" width="1200" height="640" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+                </section>
+                <section>
+                    <p style="font-size: 30px;line-height: 40px;color: #13DAEC;margin: 0;">上车</p>
+                    <img width="620" height="620" style="border: 0;" data-src="./imgs/car-vr.jpg">
+                </section>
             </section>
             <!--<section>
                 <h2>demo</h2>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/earth/">来松鼠村看看</a></p>
                 <p style="font-size: 30px;line-height: 40px;"><a target="_blank" href="http://127.0.0.1:5050/webgl/flyCarVR/">别说话，先上车</a></p>
             </section>-->
-            <section>
-                <p style="font-size: 30px;line-height: 40px;color: #13DAEC;margin: 0;">进村</p>
-                <img width="620" height="620" style="border: 0;" data-src="./imgs/earth-vr.png">
-            </section>
-            <section>
-                <p style="font-size: 30px;line-height: 40px;color: #13DAEC;margin: 0;">上车</p>
-                <img width="620" height="620" style="border: 0;" data-src="./imgs/car-vr.jpg">
-            </section>
             <section>
                 <h1>Q&A</h1>
             </section>
