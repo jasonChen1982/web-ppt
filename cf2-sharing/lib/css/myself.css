@@ -700,7 +700,14 @@ to {opacity: 1;}
 from {opacity: 0;}
 to {opacity: 1;}
 }
-
+#thanks {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 100;
+}
 
 
 
