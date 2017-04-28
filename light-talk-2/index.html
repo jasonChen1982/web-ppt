@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>专心喝茶</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+    <style>
+    .reveal pre {
+        width: 100%;
+    }
+    .reveal .talk {
+        position: relative;
+        max-width: 640px;
+        margin-bottom: 40px;
+    }
+    .reveal .content {
+        padding: 10px 20px;
+        background: #fff;
+        border-radius: 10px;
+        color: #000;
+        font-size: 20px;
+        text-align: left;
+    }
+    .reveal .content span {
+        color: #f9216a;
+    }
+    .reveal .talk-left {
+        float: left;
+        padding-left: 130px;
+    }
+    .reveal .talk-left:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 20px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: url('./imgs/niu.jpeg') 0 0;
+        background-size: 100% auto;
+    }
+    .reveal .talk-right {
+        float: right;
+        padding-right: 130px;
+    }
+    .reveal .talk-right:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: url('./imgs/me.jpeg') center;
+        background-size: 100% 100%;
+    }
+    .reveal .clear {
+        clear: both;
+    }
+    .reveal .overflow {
+        height: 700px;
+        overflow: auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2 id="title">动画的自动化时代</h2>
+                <p style="margin-top: 120px;"><small>SHARING BY <a href="https://github.com/jasonChen1982">JC</a></small></p>
+                <aside class="notes">标题表达的有点大，我都不好意思这么说，赶紧跳过</aside>
+            </section>
+            <section>
+                <h2>面对这样的需求</h2>
+                <iframe data-src="//jasonchen1982.github.io/jcc2d/examples/demo_animation_keyFrames2/index.html" width="320" height="569" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+            </section>
+            <section>
+                <h2>动画有些时候是个体力活</h2>
+                <aside class="notes">我的业务功能还没做完呢，哪有时间做这个。</aside>
+            </section>
+            <section>
+                <h2>手写动画</h2>
+                <div style="width: 900px; margin: 0 auto;">
+                <pre style="margin: 0;"><code class="hljs" data-trim contenteditable>
+const JC = require('jcc2d');
+const stage = new JC.Stage({
+  dom: 'canvas-stage',
+});
+const coinImg = 'https://jasonchen1982.github.io/jcc2d/examples/demo_animation_keyFrames2/images/img_3.png';
+
+const coin = new JC.Sprite({
+  texture: new JC.Texture(coinImg),
+});
+const timeline = coin.runners({
+  runners: [
+    { to: { x: 100, y: 200, rotation: 0, alpha: 0 }, ease: 'elasticIn' },
+    { to: { x: -210, y: 300, rotation: 360, alpha: 1 }, ease: 'linear' },
+    { to: { x: 99, y: -200, rotation: 200, }, ease: 'backIn' },
+    { to: { x: 70, y: 140, rotation: -30, }, ease: 'linear' },
+    { to: { x: 300, y: -10, rotation: 120, }, ease: 'bounceOut' },
+    { to: { x: 150, y: -102, rotation:310, }, ease: 'elasticIn' },
+    { to: { x: 70, y: 80, rotation: 700, }, ease: 'backIn' },
+    { to: { x: 134, y: 12, rotation: 100, }, ease: 'bounceOut' },
+    { to: { x: 210, y: 155, rotation: 0, alpha: 0 }, ease: 'backOut' },
+  ],
+  wait: 800,
+});
+stage.adds(coin);
+stage.startEngine();
+                </code></pre>
+                </div>
+            </section>
+            <section>
+                <h4>加班赶完动画之后...</h4>
+                <aside class="notes">满心欢喜的发给设计师检查的时候，星期五，离回家还有5分钟</aside>
+            </section>
+            <section>
+                <h3>以下对话纯属虚构</h3>
+            </section>
+            <section>
+                <div class="overflow">
+                    <div class="clear fragment fade-left" data-fragment-index="0">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p style="word-break: break-all;">老哥，看看动画:<br/><a href="https://jasonchen1982.github.io/jcc2d/examples/demo_animation_keyFrames2/index.html">https://jasonchen1982.github.io/jcc2d/examples/demo_animation_keyFrames2/index.html</a><br/>有没有什么问题？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="1">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <img src="./imgs/check.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="2">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <p>这几个地方我觉得要再往右调<span>根号2个像素</span>，旋转再加<span>0.03个弧度</span>，注意是弧度。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="3">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p>为什么呢？...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="4">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <p>就是感觉好看一些。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="5">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p>我感觉这样就挺好看的啊！</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="6">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <p>我要对我的设计负责，少了这<span>根号2个像素</span>我唧几都说服不了我唧几个。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="7">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p><img src="http://git.cn-hangzhou.oss-cdn.aliyun-inc.com/uploads/user/avatar/27136/1T1262F5-4.gif" width="50" style="border: none;box-shadow: none;margin: 0;"/>好吧 T_T</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear" style="height: 200px;"></div>
+                </div>
+                <aside class="notes">终于做完了，别急这只是开始。对话纯属虚构</aside>
+            </section>
+            <section>
+                <img style="width: 600px; border: none;" src="./imgs/wuyu.gif"/>
+                <aside  class="notes">他这话没毛病啊，说的也很有道理啊，毕竟设计方面人家才是专业的啊</aside>
+            </section>
+            <section>
+                <h3>人家说的也很有道理啊</h3>
+            </section>
+            <section>
+                <h2>不应该人来做</h2>
+                <p style="margin-top: 120px;" class="fragment fade-up">我可是会js的人</p>
+                <aside class="notes">打了盘王者农药，想起这事，就应该由程序来做啊，越想越觉得是</aside>
+            </section>
+            <section>
+                <iframe data-src="//jasonchen1982.github.io/jcc2d/examples/demo_animation_keyFrames2/index.html" width="320" height="569" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+            </section>
+            <section>
+                <h3>动作固定、时间固定、变换属性可预知</h3>
+                <p style="margin-top: 120px;" class="fragment fade-up"><a href="https://github.com/bodymovin/bodymovin">插件－bodymovin</a></p>
+                <aside class="notes">使用数据以固定的标准描述动画的动作，然后由js以同样的标志解析出来</aside>
+            </section>
+            <section>
+                <h3>说搞就搞</h3>
+            </section>
+            <section>
+                <h2>导出动画</h2>
+                <div style="width: 900px; margin: 0 auto;">
+                <pre style="margin: 0;"><code class="hljs" data-trim contenteditable>
+const data = require('./animation/data.json');
+const JC = require('jcc2d');
+const stage = new JC.Stage({
+  dom: 'canvas-stage',
+});
+var ani = new JC.ParserAnimation({
+  keyframes: data,
+  // fr: 30,
+  // infinite: true,
+  // alternate: true,
+});
+stage.adds(ani.doc);
+stage.startEngine();
+                </code></pre>
+                </div>
+            </section>
+            <section>
+                <iframe data-src="//jasonchen1982.github.io/jcc2d/examples/demo_animation_keyFrames2/index.html" width="320" height="569" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+            </section>
+            <section>
+                <iframe data-src="//jasonchen1982.github.io/jcc2d/examples/demo_animation_keyFrames3/index.html" width="320" height="569" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+            </section>
+            <section>
+                <h2>导出成CSS3的animation</h2>
+                <iframe width="100%" height="500" src="//jsfiddle.net/jasonchen1882/2f4kgwrm/embedded/result,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                <aside class="notes">有些时候我们并不需要这么重的一个动画功能，可能只是设计师为下载按钮设计了个跳跃的动画，活着什么。没必要使用canvas或者是一个什么其它的引擎</aside>
+            </section>
+            <section>
+                <div class="overflow">
+                    <div class="clear fragment fade-left" data-fragment-index="0">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p style="word-break: break-all;">老哥，看看动画:<br/><a href="https://jasonchen1982.github.io/jcc2d/examples/demo_animation_keyFrames2/index.html">https://jasonchen1982.github.io/jcc2d/examples/demo_animation_keyFrames2/index.html</a><br/>有没有什么问题？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="1">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <img src="./imgs/check.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="2">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <p>这个地方我觉得要再往右调<span> 3又2分之根号3</span>个像素，旋转再加<span>0.03个弧度</span>。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="3">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <p>注意是弧度。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="4">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p>好啊，没问题。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="5">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <img src="./imgs/ok1.jpg"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="6">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <img src="./imgs/ok2.jpg"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="7">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p>随便改～～～</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="8">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p><span>你调整完重新导个数据给我就可以了。</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="9">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <p>。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="10">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <p><span>3又2分之根号3</span>是多少个像素来着？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="11">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p><span>3 * Math.pow(3, 0.5);</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-left" data-fragment-index="12">
+                        <div class="talk talk-right">
+                            <div class="content">
+                                <p>0.03个弧度等于<span>0.03 * 180 ／ Math.PI</span>角度</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear fragment fade-right" data-fragment-index="13">
+                        <div class="talk talk-left">
+                            <div class="content">
+                                <p>我考虑下是不是有必要调整先。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear" style="height: 200px;"></div>
+                </div>
+            </section>
+            <section>
+                <h3>合理的工作流</h3>
+            </section>
+            <section>
+                <h2>似乎解决了问题</h2>
+            </section>
+            <section>
+                <h2>但是并不是所有的</h2>
+            </section>
+            <section>
+                <section>
+                    <h2>动画种类太多了</h2>
+                    <p class="fragment fade-down" data-fragment-index="0" style="font-size: 50px;line-height: 40px; margin-top: 120px;">是的，很多种的</p>
+                </section>
+                <section>
+                    <h2>物理动画</h2>
+                    <iframe data-src="//jasonchen1982.github.io/labratory/svg/none/" width="1200" height="450" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+                </section>
+                <section>
+                    <h2>物理动画</h2>
+                    <iframe data-src="//jasonchen1982.github.io/jcc2d/examples/demo_graphics_particle/" width="900" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+                </section>
+                <section>
+                    <h2>曲线算法动画</h2>
+                    <iframe data-src="//127.0.0.1:4040/examples/image_transition/" width="900" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+                </section>
+                <section>
+                    <h2>样条曲线动画</h2>
+                    <iframe data-src="//jasonchen1982.github.io/labratory/webgl/earth/" width="900" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="max-width: 100%;" allowfullscreen></iframe>
+                </section>
+            </section>
+            <section>
+                <h3>每个领域都在不停的搞事情</h3>
+                <p class="fragment fade-up" data-fragment-index="0">不停的追赶行业的发展</p>
+                <p class="fragment fade-up" data-fragment-index="1">这是一个长期的过程</p>
+                <p class="fragment fade-up" data-fragment-index="2">除非它发展的很慢</p>
+            </section>
+            <section>
+                <h1>END</h1>
+                <p style="font-size: 24px;line-height: 40px;">thanks for listen</p>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    /**
+     * 做营销活动，难免会碰到一些动画需求。假如你了解一些动画引擎的时候，对于处理时间轴类型的变换动画并不难，
+     * 但是就是比较耗时。我们做动画，
+     * 
+     * 
+     * 
+     * d: 这个地方我觉得要再往右调根号2个像素，旋转再加0.03个弧度，注意是弧度。
+     * f: 为什么呢？
+     * d: 就是感觉好看一些。
+     * f: 我问了身边的人都感觉这样就挺好看的啊！
+     * d: 我要对我的设计负责，少了这根号2个像素我唧几都说服不了我唧几。
+     * f: 好吧
+     * 
+     * 我爱的程序是不会骗我的
+     * 
+     * d: 这个地方我觉得要再往右调 3又2分之根号3 个像素，旋转再加0.03个弧度。
+     * d: 注意是弧度。
+     * f: 好啊，没问题。
+     * f: 你调整完重新导个数据给我就可以了。
+     * d: 3又2分之根号3是多少个像素来着？
+     * f: 3 * Math.pow(3, 0.5);
+     * f: 0.03个弧度等于0.03 * 180 ／ Math.PI角度;
+     * d: 我考虑下是不是有必要调整先。
+     * f: 等你的数据哦～
+     * 
+     * 工作流上就避免了这个问题
+     * 
+     */
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        width: 1200,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>
